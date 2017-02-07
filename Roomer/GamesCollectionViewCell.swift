@@ -11,4 +11,9 @@ import UIKit
 class GamesCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var gameName: UILabel!
     @IBOutlet weak var gameImage: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.gameImage.adjustsImageWhenAncestorFocused = true
+    }
 }

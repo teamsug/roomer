@@ -97,10 +97,10 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
-        <!--View Controller-->
+        <!--Potato View Controller-->
         <scene sceneID="oMI-yf-zXl">
             <objects>
-                <viewController id="wRG-aD-I4M" sceneMemberID="viewController">
+                <viewController id="wRG-aD-I4M" customClass="PotatoViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Gc5-QO-dvU"/>
                         <viewControllerLayoutGuide type="bottom" id="uCG-Y5-djs"/>
@@ -108,11 +108,19 @@
                     <view key="view" contentMode="scaleToFill" id="BNg-FQ-EV4">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7L-9T-2Ia">
+                                <rect key="frame" x="884" y="497" width="152" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Play"/>
+                            </button>
+                        </subviews>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wf-7F-Rpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2514" y="75"/>
+            <point key="canvasLocation" x="2489" y="75"/>
         </scene>
     </scenes>
 </document>
