@@ -11,6 +11,7 @@
 		67A1A5B31E491BF400FAD140 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1A5B21E491BF400FAD140 /* ViewController.swift */; };
 		67A1A5B61E491BF400FAD140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A1A5B41E491BF400FAD140 /* Main.storyboard */; };
 		67A1A5B81E491BF400FAD140 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 67A1A5B71E491BF400FAD140 /* Assets.xcassets */; };
+		67CD998F1E4A6CF30009BDFC /* GamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		67A1A5B51E491BF400FAD140 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		67A1A5B71E491BF400FAD140 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		67A1A5B91E491BF400FAD140 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,13 +54,38 @@
 		67A1A5AF1E491BF400FAD140 /* Roomer */ = {
 			isa = PBXGroup;
 			children = (
+				67CD998B1E4A6A1C0009BDFC /* Model */,
+				67CD998C1E4A6A210009BDFC /* View */,
+				67CD998D1E4A6A260009BDFC /* Controller */,
 				67A1A5B01E491BF400FAD140 /* AppDelegate.swift */,
-				67A1A5B21E491BF400FAD140 /* ViewController.swift */,
-				67A1A5B41E491BF400FAD140 /* Main.storyboard */,
 				67A1A5B71E491BF400FAD140 /* Assets.xcassets */,
 				67A1A5B91E491BF400FAD140 /* Info.plist */,
 			);
 			path = Roomer;
+			sourceTree = "<group>";
+		};
+		67CD998B1E4A6A1C0009BDFC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		67CD998C1E4A6A210009BDFC /* View */ = {
+			isa = PBXGroup;
+			children = (
+				67A1A5B41E491BF400FAD140 /* Main.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		67CD998D1E4A6A260009BDFC /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				67A1A5B21E491BF400FAD140 /* ViewController.swift */,
+				67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -134,6 +161,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67A1A5B31E491BF400FAD140 /* ViewController.swift in Sources */,
+				67CD998F1E4A6CF30009BDFC /* GamesCollectionViewCell.swift in Sources */,
 				67A1A5B11E491BF400FAD140 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,6 +318,7 @@
 				67A1A5BE1E491BF400FAD140 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
