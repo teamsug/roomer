@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CharactersCollectionViewCell: UICollectionViewCell {
+class PotatoCharactersCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var characterImage: UIImageView!
     
 }

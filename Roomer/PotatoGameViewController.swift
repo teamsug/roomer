@@ -1,5 +1,5 @@
 //
-//  CharacterSelectViewController.swift
+//  PotatoGameViewController.swift
 //  Roomer
 //
 //  Created by Arthur Melo on 07/02/17.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class PotatoCharacterSelectViewController: UIViewController {
+class PotatoGameViewController: UIViewController {
 
-    @IBOutlet weak var discoBallImage: UIImageView!
+    @IBOutlet weak var backgroundPotatoGame: UIImageView!
+    @IBOutlet weak var gestureName: UILabel!
+    @IBOutlet weak var gestureImage: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
