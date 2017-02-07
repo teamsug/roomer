@@ -14,6 +14,8 @@
 		67CD998F1E4A6CF30009BDFC /* GamesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */; };
 		67CD99911E4A72E80009BDFC /* PotatoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD99901E4A72E80009BDFC /* PotatoViewController.swift */; };
 		67CD99931E4A74810009BDFC /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD99921E4A74810009BDFC /* TutorialViewController.swift */; };
+		67CD99951E4A77F80009BDFC /* CharacterSelectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD99941E4A77F80009BDFC /* CharacterSelectViewController.swift */; };
+		67CD99971E4A78230009BDFC /* CharactersCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67CD99961E4A78230009BDFC /* CharactersCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GamesCollectionViewCell.swift; sourceTree = "<group>"; };
 		67CD99901E4A72E80009BDFC /* PotatoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoViewController.swift; sourceTree = "<group>"; };
 		67CD99921E4A74810009BDFC /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
+		67CD99941E4A77F80009BDFC /* CharacterSelectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CharacterSelectViewController.swift; sourceTree = "<group>"; };
+		67CD99961E4A78230009BDFC /* CharactersCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CharactersCollectionViewCell.swift; path = ../CharactersCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		67CD998D1E4A6A260009BDFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				67CD99961E4A78230009BDFC /* CharactersCollectionViewCell.swift */,
+				67CD99941E4A77F80009BDFC /* CharacterSelectViewController.swift */,
 				67A1A5B21E491BF400FAD140 /* ViewController.swift */,
 				67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */,
 				67CD99901E4A72E80009BDFC /* PotatoViewController.swift */,
@@ -166,6 +172,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				67CD99971E4A78230009BDFC /* CharactersCollectionViewCell.swift in Sources */,
+				67CD99951E4A77F80009BDFC /* CharacterSelectViewController.swift in Sources */,
 				67A1A5B31E491BF400FAD140 /* ViewController.swift in Sources */,
 				67CD998F1E4A6CF30009BDFC /* GamesCollectionViewCell.swift in Sources */,
 				67CD99931E4A74810009BDFC /* TutorialViewController.swift in Sources */,
