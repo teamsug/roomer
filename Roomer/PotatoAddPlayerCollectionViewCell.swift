@@ -9,5 +9,11 @@
 import UIKit
 
 class PotatoAddPlayerCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var addImage: UIImageView!
     
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.addImage.adjustsImageWhenAncestorFocused = true
+    }
 }

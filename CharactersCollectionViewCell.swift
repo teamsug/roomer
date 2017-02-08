@@ -11,4 +11,8 @@ import UIKit
 class PotatoCharactersCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var characterImage: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        self.characterImage.adjustsImageWhenAncestorFocused = true
+    }
 }
