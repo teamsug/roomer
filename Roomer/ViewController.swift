@@ -33,6 +33,10 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! GamesCollectionViewCell
+        
+        cell.gameImage.image = UIImage(named: "capaBatata")
+        cell.gameName.text = "Super Ultra Batata Game"
+        
         return cell
     }
 }
