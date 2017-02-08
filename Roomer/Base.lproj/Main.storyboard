@@ -324,11 +324,84 @@
                         <outlet property="backgroundPotatoGame" destination="a4t-oU-TTL" id="m5l-Zy-Qws"/>
                         <outlet property="gestureImage" destination="9S0-uc-fFs" id="BGM-6g-h3Y"/>
                         <outlet property="gestureName" destination="mOP-CX-2GI" id="CGo-iv-6T0"/>
+                        <segue destination="d8u-QQ-cvV" kind="show" id="OBT-bF-tdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XT-ZJ-viB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="9363" y="75"/>
+        </scene>
+        <!--Potato Winner View Controller-->
+        <scene sceneID="vUi-B5-PMv">
+            <objects>
+                <viewController id="d8u-QQ-cvV" customClass="PotatoWinnerViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Xvc-0u-QCx"/>
+                        <viewControllerLayoutGuide type="bottom" id="OPf-Ou-S1X"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="EZU-kF-UW3">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q69-sp-OUL">
+                                <rect key="frame" x="0.0" y="1020" width="1920" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-AO-bV0">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDK-qK-paL">
+                                <rect key="frame" x="1829" y="0.0" width="90" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cJ-aO-cVx">
+                                <rect key="frame" x="0.0" y="0.0" width="90" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNR-BH-iVh">
+                                <rect key="frame" x="744" y="352" width="432" height="230"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bue-CY-iD5">
+                                <rect key="frame" x="912" y="659" width="97" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1m-T4-Wwt">
+                                <rect key="frame" x="1087" y="819" width="254" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Play again"/>
+                                <connections>
+                                    <action selector="playAgainPressed:" destination="d8u-QQ-cvV" eventType="primaryActionTriggered" id="3sZ-aj-cwU"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA0-KG-rZB">
+                                <rect key="frame" x="655" y="819" width="133" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okPressed:" destination="d8u-QQ-cvV" eventType="primaryActionTriggered" id="5ZX-7a-cd0"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="winnerImage" destination="uNR-BH-iVh" id="pQm-VH-LbD"/>
+                        <outlet property="winnerName" destination="Bue-CY-iD5" id="gHQ-ST-6KV"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yjw-hQ-BMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="11483" y="75"/>
         </scene>
     </scenes>
 </document>
