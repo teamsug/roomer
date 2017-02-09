@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="tBh-3y-ZcO">
+<document type="com.apple.InterfaceBuilder.AppleTV.Storyboard" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="AppleTV" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="appleTV" orientation="landscape">
         <adaptation id="light"/>
     </device>
@@ -142,7 +142,7 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="fGx-4R-d6p" kind="show" id="6fW-qF-udd"/>
+                                    <segue destination="tBh-3y-ZcO" kind="show" id="huF-IU-olq"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -194,7 +194,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAm-3Q-uEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4847" y="75"/>
+            <point key="canvasLocation" x="4988" y="-1918"/>
         </scene>
         <!--Potato Character Select View Controller-->
         <scene sceneID="WVw-p0-Yyo">
@@ -301,7 +301,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIB-51-mx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7203" y="75"/>
+            <point key="canvasLocation" x="5461" y="75"/>
         </scene>
         <!--Potato Game View Controller-->
         <scene sceneID="YxH-q2-Jma">
@@ -436,4 +436,7 @@
             <point key="canvasLocation" x="11483" y="75"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="huF-IU-olq"/>
+    </inferredMetricsTieBreakers>
 </document>
