@@ -10,7 +10,7 @@ import UIKit
 
 class PotatoCharacterSelectViewController: UIViewController {
 
-    var numberOfPlayers = 1
+    var numberOfPlayers = 3
     
     @IBOutlet weak var discoBallImage: UIImageView!
     
