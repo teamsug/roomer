@@ -142,20 +142,24 @@
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
                                 <state key="normal" title="Play"/>
                                 <connections>
-                                    <segue destination="tBh-3y-ZcO" kind="show" id="huF-IU-olq"/>
+                                    <action selector="playButtonPressed:" destination="wRG-aD-I4M" eventType="primaryActionTriggered" id="YFU-1G-kdr"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
+                    <connections>
+                        <segue destination="tBh-3y-ZcO" kind="show" identifier="character" id="eSq-D8-H0N"/>
+                        <segue destination="fGx-4R-d6p" kind="show" identifier="tutorial" id="CSB-lb-P6d"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wf-7F-Rpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2489" y="75"/>
+            <point key="canvasLocation" x="2535" y="75"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="T8j-SY-3o0">
             <objects>
-                <viewController id="fGx-4R-d6p" customClass="TutorialViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="tutorial" id="fGx-4R-d6p" customClass="TutorialViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zH1-VH-XI1"/>
                         <viewControllerLayoutGuide type="bottom" id="mcl-yc-hmo"/>
@@ -186,11 +190,25 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovw-pY-tgh">
+                                <rect key="frame" x="710" y="128" width="500" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-Lk-6iK">
+                                <rect key="frame" x="775" y="866" width="372" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Proceed to game"/>
+                                <connections>
+                                    <action selector="proceedToGamePressed:" destination="fGx-4R-d6p" eventType="primaryActionTriggered" id="2BO-Zj-1CD"/>
+                                    <segue destination="tBh-3y-ZcO" kind="show" identifier="character" id="mSM-kl-Fub"/>
+                                </connections>
+                            </button>
                         </subviews>
                     </view>
-                    <connections>
-                        <segue destination="tBh-3y-ZcO" kind="show" id="KDd-58-cMd"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IAm-3Q-uEb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -301,7 +319,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sIB-51-mx5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5461" y="75"/>
+            <point key="canvasLocation" x="5869" y="75"/>
         </scene>
         <!--Potato Game View Controller-->
         <scene sceneID="YxH-q2-Jma">
@@ -361,7 +379,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XT-ZJ-viB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9363" y="75"/>
+            <point key="canvasLocation" x="8210" y="75"/>
         </scene>
         <!--Potato Winner View Controller-->
         <scene sceneID="vUi-B5-PMv">
@@ -433,10 +451,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yjw-hQ-BMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11483" y="75"/>
+            <point key="canvasLocation" x="11088" y="75"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="huF-IU-olq"/>
+        <segue reference="eSq-D8-H0N"/>
     </inferredMetricsTieBreakers>
 </document>

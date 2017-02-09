@@ -10,7 +10,7 @@ import UIKit
 
 class TutorialViewController: UIViewController {
 
-    @IBOutlet weak var tutorialImage: UIImageView!
+    let userDefaults = UserDefaults.standard
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +25,9 @@ class TutorialViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func proceedToGamePressed(_ sender: UIButton) {
+        performSegue(withIdentifier: "character", sender: nil)
+    }
 
     /*
     // MARK: - Navigation

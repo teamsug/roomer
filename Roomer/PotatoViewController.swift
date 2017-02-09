@@ -10,6 +10,8 @@ import UIKit
 
 class PotatoViewController: UIViewController {
     
+    var userDefaults = UserDefaults.standard
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +23,16 @@ class PotatoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func playButtonPressed(_ sender: UIButton) {
+        if !userDefaults.bool(forKey: "firstTimeInGame") {
+            performSegue(withIdentifier: "tutorial", sender: nil)
+            userDefaults.set(true, forKey: "firstTimeInGame")
+            userDefaults.synchronize()
+        } else {
+            performSegue(withIdentifier: "character", sender: nil)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -31,5 +42,4 @@ class PotatoViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }
