@@ -164,10 +164,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Np7-u7-WkT">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-B7-7kw">
                                 <rect key="frame" x="0.0" y="0.0" width="90" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -193,7 +189,6 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="tutorialImage" destination="Np7-u7-WkT" id="OhM-xJ-78V"/>
                         <segue destination="tBh-3y-ZcO" kind="show" id="KDd-58-cMd"/>
                     </connections>
                 </viewController>
