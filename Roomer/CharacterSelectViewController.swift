@@ -26,13 +26,15 @@ class PotatoCharacterSelectViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        if segue.identifier == "segue" {
+            let gameVC = segue.destination as! PotatoGameViewController
+            gameVC.numberOfPlayers = numberOfPlayers - 1
+        }
     }
     
     @IBAction func nextScreenPressed(_ sender: UIButton) {
         performSegue(withIdentifier: "segue", sender: nil)
     }
-    
 }
 
 

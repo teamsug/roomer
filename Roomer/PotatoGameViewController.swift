@@ -13,18 +13,20 @@ class PotatoGameViewController: UIViewController {
     @IBOutlet weak var backgroundPotatoGame: UIImageView!
     @IBOutlet weak var gestureName: UILabel!
     @IBOutlet weak var gestureImage: UIImageView!
+    var numberOfPlayers: Int?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
+        let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
     /*
     // MARK: - Navigation
