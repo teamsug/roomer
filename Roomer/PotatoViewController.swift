@@ -15,6 +15,7 @@ class PotatoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        changeMusic(music: "03")
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +32,16 @@ class PotatoViewController: UIViewController {
         } else {
             performSegue(withIdentifier: "character", sender: nil)
         }
+    }
+    
+    func changeMusic(music: String){
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.soundPlayer.stop()
+        delegate.audioToPlay = Bundle.main.path(forResource: music, ofType: "mp3")
+        delegate.makeTheParty()
+        delegate.soundPlayer.numberOfLoops = -1
+        delegate.soundPlayer.volume = 1
+        delegate.soundPlayer.play()
     }
     
     /*

@@ -21,13 +21,17 @@ class PotatoGameViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        changeMusic(music: "02")
+        
         let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             if self.counter >= self.gestures.count {
                 self.counter = 0
                 self.gestureImage.image = self.gestures[self.counter+1]
+                self.changeMusic(music: "01")
             } else {
                 self.gestureImage.image = self.gestures[self.counter]
                 self.counter = self.counter + 1
+                self.changeMusic(music: "03")
             }
         }
         
@@ -42,6 +46,17 @@ class PotatoGameViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func changeMusic(music: String){
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.soundPlayer.stop()
+        delegate.audioToPlay = Bundle.main.path(forResource: music, ofType: "mp3")
+        delegate.makeTheParty()
+        delegate.soundPlayer.numberOfLoops = -1
+        delegate.soundPlayer.volume = 1
+        delegate.soundPlayer.play()
+    }
+    
 
     /*
     // MARK: - Navigation

@@ -7,16 +7,33 @@
 //
 
 import UIKit
+import AVFoundation
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
-
+    var soundPlayer = AVAudioPlayer()
+    var audioToPlay = Bundle.main.path(forResource: "01", ofType: "mp3")
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        makeTheParty()
+        soundPlayer.numberOfLoops = -1
+        soundPlayer.volume = 1
+        soundPlayer.play()
         return true
+    }
+    
+    func makeTheParty(){
+        let audioURL = NSURL(fileURLWithPath: self.audioToPlay!)
+        do {
+            try soundPlayer = AVAudioPlayer(contentsOf: audioURL as URL, fileTypeHint: nil)
+            soundPlayer.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
