@@ -11,40 +11,84 @@ import UIKit
 class PotatoGameViewController: UIViewController {
 
     @IBOutlet weak var backgroundPotatoGame: UIImageView!
-    @IBOutlet weak var gestureName: UILabel!
-    @IBOutlet weak var gestureImage: UIImageView!
+    
+    @IBOutlet weak var gesture: UIImageView!
+    @IBOutlet weak var gestureNext: UIImageView!
+    @IBOutlet weak var gestureGrid: UIImageView!
+    @IBOutlet weak var gestureGridNext: UIImageView!
+    
+    var gridOnSecondChange: Bool = false
+    
     var numberOfPlayers: Int?
     var counter = 0
-    var gestures: [UIImage] = [UIImage.init(named: "appletv")!, UIImage.init(named: "appletv2")!, UIImage.init(named: "appletv3")!]
+    
+//    var gestures: [UIImage] = [UIImage.init(named: "appletv")!, UIImage.init(named: "appletv2")!, UIImage.init(named: "appletv3")!]
+    var movements: [String] = ["hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        changeMusic(music: "02")
-        
-        let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-            if self.counter >= self.gestures.count {
+        let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { (timer) in
+            if self.counter >= self.movements.count {
                 self.counter = 0
-                self.gestureImage.image = self.gestures[self.counter+1]
-                self.changeMusic(music: "01")
+                self.changeMovement(to: self.movements[self.counter])
             } else {
-                self.gestureImage.image = self.gestures[self.counter]
+                self.changeMovement(to: self.movements[self.counter])
                 self.counter = self.counter + 1
-                self.changeMusic(music: "03")
             }
         }
         
-        let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-            let result = arc4random_uniform(5 - 1) + 1
-            self.gestureName.text = String(result)
-        }
+//        let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+//            let result = arc4random_uniform(5 - 1) + 1
+//            //self.gestureName.text = String(result)
+//        }
         
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func changeMovement(to movement: String) {
+        
+        if gridOnSecondChange {
+            gesture.image = UIImage(named: movement)
+            gestureGrid.image = UIImage(named: "\(movement)Grid")
+            
+            UIView.animate(withDuration: 3.0) {
+                self.gesture.alpha = 1.0
+                self.gestureNext.alpha = 0.0
+                self.gestureGrid.alpha = 1.0
+                self.gestureGridNext.alpha = 0.0
+            }
+            gridOnSecondChange = false
+        } else {
+            gestureNext.image = UIImage(named: movement)
+            gestureGridNext.image = UIImage(named: "\(movement)Grid")
+            
+            UIView.animate(withDuration: 3.0) {
+                self.gesture.alpha = 0.0
+                self.gestureNext.alpha = 1.0
+                self.gestureGrid.alpha = 0.0
+                self.gestureGridNext.alpha = 1.0
+            }
+            gridOnSecondChange = true
+        }
+        
+        
+        
+//        UIView.animate(withDuration: 3.0) {
+//            self.gesture.alpha = 1.0
+//            self.gestureGrid.alpha = 1.0
+//        }
+        //changeMusic(music: movement)
+        
+//        UIView.transition(with: self.gestureGrid, duration: 3, options: .transitionCrossDissolve, animations: {
+//            self.gestureGrid.image = UIImage(named: movement)
+//        }, completion: nil)
+        
     }
     
     func changeMusic(music: String){

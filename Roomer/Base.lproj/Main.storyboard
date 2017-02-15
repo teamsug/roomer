@@ -341,12 +341,6 @@
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sSs-V0-tL4">
                                 <rect key="frame" x="0.0" y="1020" width="1920" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rlhandGrid" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-aP-REo">
-                                        <rect key="frame" x="0.0" y="-112" width="1920" height="172"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                    </imageView>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29c-Fu-gaG">
@@ -364,7 +358,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="rightHand" translatesAutoresizingMaskIntoConstraints="NO" id="iJ1-df-pk4">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthand" translatesAutoresizingMaskIntoConstraints="NO" id="iJ1-df-pk4">
+                                <rect key="frame" x="488" y="56" width="945" height="907"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthandGrid" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-aP-REo">
+                                <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syA-Mw-94O">
+                                <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsG-SH-wdM">
                                 <rect key="frame" x="488" y="56" width="945" height="907"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -372,12 +378,16 @@
                     </view>
                     <connections>
                         <outlet property="backgroundPotatoGame" destination="a4t-oU-TTL" id="m5l-Zy-Qws"/>
+                        <outlet property="gesture" destination="iJ1-df-pk4" id="NER-RP-uFN"/>
+                        <outlet property="gestureGrid" destination="4Rx-aP-REo" id="cJx-hN-v0f"/>
+                        <outlet property="gestureGridNext" destination="syA-Mw-94O" id="GDV-B8-IOZ"/>
+                        <outlet property="gestureNext" destination="hsG-SH-wdM" id="sf7-c2-mWd"/>
                         <segue destination="d8u-QQ-cvV" kind="show" id="OBT-bF-tdp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XT-ZJ-viB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8210" y="75"/>
+            <point key="canvasLocation" x="8192" y="75"/>
         </scene>
         <!--Potato Winner View Controller-->
         <scene sceneID="vUi-B5-PMv">
@@ -454,8 +464,8 @@
     </scenes>
     <resources>
         <image name="background" width="1920" height="1080"/>
-        <image name="rightHand" width="945" height="907"/>
-        <image name="rlhandGrid" width="1920" height="172"/>
+        <image name="righthand" width="945" height="907"/>
+        <image name="righthandGrid" width="1920" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mSM-kl-Fub"/>
