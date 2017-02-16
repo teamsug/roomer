@@ -367,11 +367,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsG-SH-wdM">
-                                <rect key="frame" x="432" y="68" width="1057" height="907"/>
+                                <rect key="frame" x="432" y="68" width="1099" height="907"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthand" translatesAutoresizingMaskIntoConstraints="NO" id="iJ1-df-pk4">
-                                <rect key="frame" x="432" y="68" width="1057" height="907"/>
+                                <rect key="frame" x="432" y="68" width="1099" height="907"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
@@ -383,11 +383,50 @@
                         <outlet property="gestureGridNext" destination="syA-Mw-94O" id="GDV-B8-IOZ"/>
                         <outlet property="gestureNext" destination="hsG-SH-wdM" id="sf7-c2-mWd"/>
                         <segue destination="d8u-QQ-cvV" kind="show" id="OBT-bF-tdp"/>
+                        <segue destination="bX2-9O-omk" kind="show" identifier="segue" id="lnN-y4-UcZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XT-ZJ-viB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="8192" y="75"/>
+        </scene>
+        <!--Potato Player Out View Controller-->
+        <scene sceneID="suw-wd-NsK">
+            <objects>
+                <viewController storyboardIdentifier="playerout" id="bX2-9O-omk" customClass="PotatoPlayerOutViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="gu2-ke-8wv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Glb-cO-dmy"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YJi-5C-yGK">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Quem tiver com o controle sai!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpC-uE-ecK">
+                                <rect key="frame" x="563" y="498" width="794" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="60"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GXl-T4-Vla">
+                                <rect key="frame" x="894" y="819" width="133" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="OK"/>
+                                <connections>
+                                    <action selector="okPressed:" destination="bX2-9O-omk" eventType="primaryActionTriggered" id="Kcf-z3-bOa"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <segue destination="EM2-8k-LVk" kind="show" identifier="segue" id="WBx-PQ-axU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95b-xU-ytT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8159" y="1695"/>
         </scene>
         <!--Potato Winner View Controller-->
         <scene sceneID="vUi-B5-PMv">
@@ -468,6 +507,7 @@
         <image name="righthandGrid" width="1920" height="172"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="WBx-PQ-axU"/>
         <segue reference="mSM-kl-Fub"/>
     </inferredMetricsTieBreakers>
 </document>

@@ -22,14 +22,31 @@ class PotatoGameViewController: UIViewController {
     var numberOfPlayers: Int?
     var counter = 0
     
-//    var gestures: [UIImage] = [UIImage.init(named: "appletv")!, UIImage.init(named: "appletv2")!, UIImage.init(named: "appletv3")!]
+    var timerToChangeMovement: Timer!
+    var timerToPause: Timer!
     var movements: [String] = ["hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         
-        let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 6, repeats: true) { (timer) in
+        NotificationCenter.default.addObserver(self, selector: "RestartTimer", name: NSNotification.Name(rawValue: "startTimers"), object: nil)
+        // Do any additional setup after loading the view.
+        startTimers()
+        
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    func startTimers() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "playerout")
+        
+        changeMusic(music: "02")
+        
+        timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             if self.counter >= self.movements.count {
                 self.counter = 0
                 self.changeMovement(to: self.movements[self.counter])
@@ -39,16 +56,12 @@ class PotatoGameViewController: UIViewController {
             }
         }
         
-//        let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-//            let result = arc4random_uniform(5 - 1) + 1
-//            //self.gestureName.text = String(result)
-//        }
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        timerToPause = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { (timer) in
+            self.timerToChangeMovement.invalidate()
+            self.performSegue(withIdentifier: "segue", sender: nil)
+            delegate.soundPlayer.stop()
+            timer.invalidate()
+        }
     }
     
     func changeMovement(to movement: String) {
@@ -57,23 +70,31 @@ class PotatoGameViewController: UIViewController {
             gesture.image = UIImage(named: movement)
             gestureGrid.image = UIImage(named: "\(movement)Grid")
             
-            UIView.animate(withDuration: 3.0) {
-                self.gesture.alpha = 1.0
-                self.gestureNext.alpha = 0.0
+            UIView.animate(withDuration: 1.5) {
                 self.gestureGrid.alpha = 1.0
                 self.gestureGridNext.alpha = 0.0
             }
+            
+            UIView.animate(withDuration: 0.5) {
+                self.gesture.alpha = 1.0
+                self.gestureNext.alpha = 0.0
+            }
+            
             gridOnSecondChange = false
         } else {
             gestureNext.image = UIImage(named: movement)
             gestureGridNext.image = UIImage(named: "\(movement)Grid")
             
-            UIView.animate(withDuration: 3.0) {
-                self.gesture.alpha = 0.0
-                self.gestureNext.alpha = 1.0
+            UIView.animate(withDuration: 1.5) {
                 self.gestureGrid.alpha = 0.0
                 self.gestureGridNext.alpha = 1.0
             }
+            
+            UIView.animate(withDuration: 0.5) {
+                self.gesture.alpha = 0.0
+                self.gestureNext.alpha = 1.0
+            }
+            
             gridOnSecondChange = true
         }
         
@@ -89,6 +110,13 @@ class PotatoGameViewController: UIViewController {
 //            self.gestureGrid.image = UIImage(named: movement)
 //        }, completion: nil)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "segue" {
+            let destinationVC = segue.destination as! PotatoPlayerOutViewController
+            destinationVC.potatoGame = self
+        }
     }
     
     func changeMusic(music: String){

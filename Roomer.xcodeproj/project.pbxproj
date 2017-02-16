@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		67182F611E562FE600E30A0F /* PotatoPlayerOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */; };
 		6757FB171E4BA0C800311526 /* PotatoWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */; };
 		67A1A5B11E491BF400FAD140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1A5B01E491BF400FAD140 /* AppDelegate.swift */; };
 		67A1A5B31E491BF400FAD140 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1A5B21E491BF400FAD140 /* ViewController.swift */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoPlayerOutViewController.swift; sourceTree = "<group>"; };
 		6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerViewController.swift; sourceTree = "<group>"; };
 		67A1A5AD1E491BF400FAD140 /* Roomer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A1A5B01E491BF400FAD140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -55,6 +57,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		67182F621E562FEB00E30A0F /* Potato */ = {
+			isa = PBXGroup;
+			children = (
+				67CD99981E4A7A4E0009BDFC /* PotatoGameViewController.swift */,
+				67CD99961E4A78230009BDFC /* CharactersCollectionViewCell.swift */,
+				67CD99941E4A77F80009BDFC /* CharacterSelectViewController.swift */,
+				67CD99901E4A72E80009BDFC /* PotatoViewController.swift */,
+				67CD99921E4A74810009BDFC /* TutorialViewController.swift */,
+				6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */,
+				B47FDC1E1E4BAA9800C0E026 /* PotatoAddPlayerCollectionViewCell.swift */,
+				67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */,
+			);
+			name = Potato;
+			sourceTree = "<group>";
+		};
 		67A1A5A41E491BF400FAD140 = {
 			isa = PBXGroup;
 			children = (
@@ -105,15 +122,9 @@
 		67CD998D1E4A6A260009BDFC /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				67CD99981E4A7A4E0009BDFC /* PotatoGameViewController.swift */,
-				67CD99961E4A78230009BDFC /* CharactersCollectionViewCell.swift */,
-				67CD99941E4A77F80009BDFC /* CharacterSelectViewController.swift */,
+				67182F621E562FEB00E30A0F /* Potato */,
 				67A1A5B21E491BF400FAD140 /* ViewController.swift */,
 				67CD998E1E4A6CF30009BDFC /* GamesCollectionViewCell.swift */,
-				67CD99901E4A72E80009BDFC /* PotatoViewController.swift */,
-				67CD99921E4A74810009BDFC /* TutorialViewController.swift */,
-				6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */,
-				B47FDC1E1E4BAA9800C0E026 /* PotatoAddPlayerCollectionViewCell.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -195,6 +206,7 @@
 			files = (
 				67CD99971E4A78230009BDFC /* CharactersCollectionViewCell.swift in Sources */,
 				67CD99991E4A7A4E0009BDFC /* PotatoGameViewController.swift in Sources */,
+				67182F611E562FE600E30A0F /* PotatoPlayerOutViewController.swift in Sources */,
 				6757FB171E4BA0C800311526 /* PotatoWinnerViewController.swift in Sources */,
 				67CD99951E4A77F80009BDFC /* CharacterSelectViewController.swift in Sources */,
 				B47FDC1F1E4BAA9800C0E026 /* PotatoAddPlayerCollectionViewCell.swift in Sources */,
