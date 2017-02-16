@@ -9,30 +9,37 @@
 import UIKit
 
 class PotatoGameViewController: UIViewController {
-
+    
+    // Background outlet to setup background image
     @IBOutlet weak var backgroundPotatoGame: UIImageView!
     
+    // Outlets to be changed by timers
     @IBOutlet weak var gesture: UIImageView!
     @IBOutlet weak var gestureNext: UIImageView!
     @IBOutlet weak var gestureGrid: UIImageView!
     @IBOutlet weak var gestureGridNext: UIImageView!
     
+    // Flag to control image changes
     var gridOnSecondChange: Bool = false
     
+    // Integer to check how much pauses are needed to finish game
     var numberOfPlayers: Int?
+    
+    // Counter to pass through movements array
     var counter = 0
     
+    // Timers to change movement and to stop game
     var timerToChangeMovement: Timer!
     var timerToPause: Timer!
+    
+    // Array of movements, strings of images are mounted with the movements array content
     var movements: [String] = ["hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: "RestartTimer", name: NSNotification.Name(rawValue: "startTimers"), object: nil)
         // Do any additional setup after loading the view.
         startTimers()
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -42,8 +49,7 @@ class PotatoGameViewController: UIViewController {
     
     func startTimers() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "playerout")
-        
+
         changeMusic(music: "02")
         
         timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
@@ -56,7 +62,7 @@ class PotatoGameViewController: UIViewController {
             }
         }
         
-        timerToPause = Timer.scheduledTimer(withTimeInterval: 15, repeats: true) { (timer) in
+        timerToPause = Timer.scheduledTimer(withTimeInterval: 8, repeats: true) { (timer) in
             self.timerToChangeMovement.invalidate()
             self.performSegue(withIdentifier: "segue", sender: nil)
             delegate.soundPlayer.stop()
@@ -64,6 +70,7 @@ class PotatoGameViewController: UIViewController {
         }
     }
     
+    // Called by function startTimers on every x seconds
     func changeMovement(to movement: String) {
         
         if gridOnSecondChange {
@@ -97,28 +104,9 @@ class PotatoGameViewController: UIViewController {
             
             gridOnSecondChange = true
         }
-        
-        
-        
-//        UIView.animate(withDuration: 3.0) {
-//            self.gesture.alpha = 1.0
-//            self.gestureGrid.alpha = 1.0
-//        }
-        //changeMusic(music: movement)
-        
-//        UIView.transition(with: self.gestureGrid, duration: 3, options: .transitionCrossDissolve, animations: {
-//            self.gestureGrid.image = UIImage(named: movement)
-//        }, completion: nil)
-        
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue" {
-            let destinationVC = segue.destination as! PotatoPlayerOutViewController
-            destinationVC.potatoGame = self
-        }
-    }
-    
+    // Called by function changeMovement to also change the music that's currently playing
     func changeMusic(music: String){
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.soundPlayer.stop()
@@ -129,15 +117,11 @@ class PotatoGameViewController: UIViewController {
         delegate.soundPlayer.play()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Sending current instance of PotatoGameViewController to allow the destination VC to resume timers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "segue" {
+            let destinationVC = segue.destination as! PotatoPlayerOutViewController
+            destinationVC.potatoGame = self
+        }
     }
-    */
-
 }
