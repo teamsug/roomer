@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "lasso.png",
+      "filename" : "tri.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "lasso@2x.png",
+      "filename" : "tri@2x.png",
       "scale" : "2x"
     },
     {

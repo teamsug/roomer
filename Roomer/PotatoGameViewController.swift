@@ -18,6 +18,8 @@ class PotatoGameViewController: UIViewController {
     @IBOutlet weak var gestureNext: UIImageView!
     @IBOutlet weak var gestureGrid: UIImageView!
     @IBOutlet weak var gestureGridNext: UIImageView!
+    @IBOutlet weak var gestureTitle: UIImageView!
+    @IBOutlet weak var gestureTitleNext: UIImageView!
     
     // Flag to control image changes
     var gridOnSecondChange: Bool = false
@@ -76,6 +78,7 @@ class PotatoGameViewController: UIViewController {
         if gridOnSecondChange {
             gesture.image = UIImage(named: movement)
             gestureGrid.image = UIImage(named: "\(movement)Grid")
+            gestureTitle.image = UIImage(named: "\(movement)Title")
             
             UIView.animate(withDuration: 1.5) {
                 self.gestureGrid.alpha = 1.0
@@ -85,12 +88,15 @@ class PotatoGameViewController: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.gesture.alpha = 1.0
                 self.gestureNext.alpha = 0.0
+                self.gestureTitle.alpha = 1.0
+                self.gestureTitleNext.alpha = 0.0
             }
             
             gridOnSecondChange = false
         } else {
             gestureNext.image = UIImage(named: movement)
             gestureGridNext.image = UIImage(named: "\(movement)Grid")
+            gestureTitleNext.image = UIImage(named: "\(movement)Title")
             
             UIView.animate(withDuration: 1.5) {
                 self.gestureGrid.alpha = 0.0
@@ -100,6 +106,8 @@ class PotatoGameViewController: UIViewController {
             UIView.animate(withDuration: 0.5) {
                 self.gesture.alpha = 0.0
                 self.gestureNext.alpha = 1.0
+                self.gestureTitle.alpha = 0.0
+                self.gestureTitleNext.alpha = 1.0
             }
             
             gridOnSecondChange = true

@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "mao1.png",
+      "filename" : "controle.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "mao1@2x.png",
+      "filename" : "controle@2x.png",
       "scale" : "2x"
     },
     {

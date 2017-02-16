@@ -366,22 +366,32 @@
                                 <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hsG-SH-wdM">
-                                <rect key="frame" x="432" y="68" width="1099" height="907"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthand" translatesAutoresizingMaskIntoConstraints="NO" id="HKf-fn-ss2">
+                                <rect key="frame" x="489" y="102" width="942" height="876"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthand" translatesAutoresizingMaskIntoConstraints="NO" id="iJ1-df-pk4">
-                                <rect key="frame" x="432" y="68" width="1099" height="907"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jKl-es-jR4">
+                                <rect key="frame" x="489" y="102" width="942" height="876"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthandTitle" translatesAutoresizingMaskIntoConstraints="NO" id="uIi-qi-LsV">
+                                <rect key="frame" x="98" y="102" width="1724" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MM5-MR-9Uc">
+                                <rect key="frame" x="98" y="102" width="1724" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="backgroundPotatoGame" destination="a4t-oU-TTL" id="m5l-Zy-Qws"/>
-                        <outlet property="gesture" destination="iJ1-df-pk4" id="NER-RP-uFN"/>
+                        <outlet property="gesture" destination="HKf-fn-ss2" id="fLZ-dp-bwN"/>
                         <outlet property="gestureGrid" destination="4Rx-aP-REo" id="cJx-hN-v0f"/>
                         <outlet property="gestureGridNext" destination="syA-Mw-94O" id="GDV-B8-IOZ"/>
-                        <outlet property="gestureNext" destination="hsG-SH-wdM" id="sf7-c2-mWd"/>
+                        <outlet property="gestureNext" destination="jKl-es-jR4" id="fWF-Xe-ff2"/>
+                        <outlet property="gestureTitle" destination="uIi-qi-LsV" id="WD3-Sr-YGV"/>
+                        <outlet property="gestureTitleNext" destination="MM5-MR-9Uc" id="FT8-1K-doC"/>
                         <segue destination="d8u-QQ-cvV" kind="show" id="OBT-bF-tdp"/>
                         <segue destination="bX2-9O-omk" kind="show" identifier="segue" id="lnN-y4-UcZ"/>
                     </connections>
@@ -503,8 +513,9 @@
     </scenes>
     <resources>
         <image name="background" width="1920" height="1080"/>
-        <image name="righthand" width="945" height="907"/>
+        <image name="righthand" width="942" height="876"/>
         <image name="righthandGrid" width="1920" height="172"/>
+        <image name="righthandTitle" width="901" height="146"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="WBx-PQ-axU"/>

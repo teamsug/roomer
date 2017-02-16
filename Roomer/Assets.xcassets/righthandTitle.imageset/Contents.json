@@ -2,12 +2,12 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "objetoInteligenteDeVetor.png",
+      "filename" : "righthandTitle.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "objetoInteligenteDeVetor@2x.png",
+      "filename" : "righthandTitle@2x.png",
       "scale" : "2x"
     },
     {
