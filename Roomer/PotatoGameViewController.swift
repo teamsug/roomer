@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import QuartzCore
 
 class PotatoGameViewController: UIViewController {
 
@@ -20,26 +21,29 @@ class PotatoGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        
-        changeMusic(music: "02")
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.soundPlayer.stop()
+        CreateView{
+            
+        self.changeMusic(music: "02")
         
         let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
             if self.counter >= self.gestures.count {
-                self.counter = 0
-                self.gestureImage.image = self.gestures[self.counter+1]
-                self.changeMusic(music: "01")
-            } else {
-                self.gestureImage.image = self.gestures[self.counter]
-                self.counter = self.counter + 1
-                self.changeMusic(music: "03")
+                    self.counter = 0
+                    self.gestureImage.image = self.gestures[self.counter+1]
+                    self.changeMusic(music: "01")
+                } else {
+                    self.gestureImage.image = self.gestures[self.counter]
+                    self.counter = self.counter + 1
+                    self.changeMusic(music: "03")
+                }
+            }
+        
+            let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+                let result = arc4random_uniform(5 - 1) + 1
+                self.gestureName.text = String(result)
             }
         }
-        
-        let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-            let result = arc4random_uniform(5 - 1) + 1
-            self.gestureName.text = String(result)
-        }
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -57,6 +61,14 @@ class PotatoGameViewController: UIViewController {
         delegate.soundPlayer.play()
     }
     
+    func CreateView(completionHandler: @escaping () -> Void){
+            let customView = CustomView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
+            self.view.addSubview(customView)
+            customView.startAnimation{
+                customView.removeFromSuperview()
+                completionHandler()
+            }
+    }
 
     /*
     // MARK: - Navigation
@@ -68,4 +80,37 @@ class PotatoGameViewController: UIViewController {
     }
     */
 
+}
+
+class CustomView: UIView{
+
+    let label: UILabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+            self.addCustomView(text: 0)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func addCustomView(text: Int){
+        label.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
+        label.backgroundColor = UIColor.white
+        label.textAlignment = NSTextAlignment.center
+        label.text = String(text)
+        self.addSubview(label)
+    }
+    
+    func startAnimation(completionHandler: @escaping () -> Void) {
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
+            self.label.alpha = 1.0
+            UIView.animate(withDuration: 1, animations: {
+                self.label.alpha = 0.0
+            }, completion: { (true) in
+                completionHandler()
+            })
+            
+        }
+    }
 }
