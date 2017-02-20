@@ -1,23 +1,20 @@
 //
-//  WinnerViewController.swift
+//  PotatoWinnerNameViewController.swift
 //  Roomer
 //
-//  Created by Arthur Melo on 08/02/17.
+//  Created by Arthur Melo on 20/02/17.
 //  Copyright © 2017 teamsug. All rights reserved.
 //
 
 import UIKit
 
-class PotatoWinnerViewController: UIViewController {
+class PotatoWinnerNameViewController: UIViewController {
+
+    @IBOutlet weak var textField: UITextField!
     
-    var winnerName: String!
-    
-    @IBOutlet weak var winnerNameLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        winnerNameLabel.text = winnerName
-        
         // Do any additional setup after loading the view.
     }
 
@@ -26,6 +23,12 @@ class PotatoWinnerViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func donePressed(_ sender: UIButton) {
+        if !(textField.text?.isEmpty)! {
+            performSegue(withIdentifier: "winner", sender: nil)
+        }
+    }
+
     /*
     // MARK: - Navigation
 
@@ -36,4 +39,10 @@ class PotatoWinnerViewController: UIViewController {
     }
     */
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "winner" {
+            let destinationVC = segue.destination as! PotatoWinnerViewController
+            destinationVC.winnerName = textField.text!
+        }
+    }
 }

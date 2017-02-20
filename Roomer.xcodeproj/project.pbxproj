@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		67182F611E562FE600E30A0F /* PotatoPlayerOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */; };
 		6757FB171E4BA0C800311526 /* PotatoWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */; };
+		677CD8571E5B8EB60055D473 /* PotatoWinnerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */; };
+		677CD85C1E5B941E0055D473 /* Road_Rage.otf in Resources */ = {isa = PBXBuildFile; fileRef = 677CD85B1E5B93FE0055D473 /* Road_Rage.otf */; };
 		67A1A5B11E491BF400FAD140 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1A5B01E491BF400FAD140 /* AppDelegate.swift */; };
 		67A1A5B31E491BF400FAD140 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67A1A5B21E491BF400FAD140 /* ViewController.swift */; };
 		67A1A5B61E491BF400FAD140 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 67A1A5B41E491BF400FAD140 /* Main.storyboard */; };
@@ -28,6 +30,8 @@
 /* Begin PBXFileReference section */
 		67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoPlayerOutViewController.swift; sourceTree = "<group>"; };
 		6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerViewController.swift; sourceTree = "<group>"; };
+		677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerNameViewController.swift; sourceTree = "<group>"; };
+		677CD85B1E5B93FE0055D473 /* Road_Rage.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Road_Rage.otf; sourceTree = "<group>"; };
 		67A1A5AD1E491BF400FAD140 /* Roomer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Roomer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		67A1A5B01E491BF400FAD140 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		67A1A5B21E491BF400FAD140 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -68,8 +72,21 @@
 				6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */,
 				B47FDC1E1E4BAA9800C0E026 /* PotatoAddPlayerCollectionViewCell.swift */,
 				67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */,
+				677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */,
 			);
 			name = Potato;
+			sourceTree = "<group>";
+		};
+		677CD8581E5B90FF0055D473 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				677CD85B1E5B93FE0055D473 /* Road_Rage.otf */,
+				67A1A5B71E491BF400FAD140 /* Assets.xcassets */,
+				B43547411E524F050063F3B5 /* 01.mp3 */,
+				B43547421E524F050063F3B5 /* 02.mp3 */,
+				B43547431E524F050063F3B5 /* 03.mp3 */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		67A1A5A41E491BF400FAD140 = {
@@ -95,11 +112,8 @@
 				67CD998C1E4A6A210009BDFC /* View */,
 				67CD998D1E4A6A260009BDFC /* Controller */,
 				67A1A5B01E491BF400FAD140 /* AppDelegate.swift */,
-				67A1A5B71E491BF400FAD140 /* Assets.xcassets */,
 				67A1A5B91E491BF400FAD140 /* Info.plist */,
-				B43547411E524F050063F3B5 /* 01.mp3 */,
-				B43547421E524F050063F3B5 /* 02.mp3 */,
-				B43547431E524F050063F3B5 /* 03.mp3 */,
+				677CD8581E5B90FF0055D473 /* Resources */,
 			);
 			path = Roomer;
 			sourceTree = "<group>";
@@ -189,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				677CD85C1E5B941E0055D473 /* Road_Rage.otf in Resources */,
 				B43547441E524F050063F3B5 /* 01.mp3 in Resources */,
 				B43547451E524F050063F3B5 /* 02.mp3 in Resources */,
 				67A1A5B81E491BF400FAD140 /* Assets.xcassets in Resources */,
@@ -205,6 +220,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				67CD99971E4A78230009BDFC /* CharactersCollectionViewCell.swift in Sources */,
+				677CD8571E5B8EB60055D473 /* PotatoWinnerNameViewController.swift in Sources */,
 				67CD99991E4A7A4E0009BDFC /* PotatoGameViewController.swift in Sources */,
 				67182F611E562FE600E30A0F /* PotatoPlayerOutViewController.swift in Sources */,
 				6757FB171E4BA0C800311526 /* PotatoWinnerViewController.swift in Sources */,

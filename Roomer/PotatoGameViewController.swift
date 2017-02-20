@@ -20,15 +20,21 @@ class PotatoGameViewController: UIViewController {
     @IBOutlet weak var gestureGridNext: UIImageView!
     @IBOutlet weak var gestureTitle: UIImageView!
     @IBOutlet weak var gestureTitleNext: UIImageView!
+    @IBOutlet weak var youareout: UIImageView!
     
     // Flag to control image changes
     var gridOnSecondChange: Bool = false
     
     // Integer to check how much pauses are needed to finish game
-    var numberOfPlayers: Int?
+    var numberOfPlayers: Int!
+    
+    var counterOfPauses = 1
     
     // Counter to pass through movements array
     var counter = 0
+    
+    // Number of times the game was paused
+    var timesPassed = 0
     
     // Timers to change movement and to stop game
     var timerToChangeMovement: Timer!
@@ -54,7 +60,10 @@ class PotatoGameViewController: UIViewController {
 
         changeMusic(music: "02")
         
-        timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+        let timeIntervalToChange = arc4random_uniform(15 - 10) + 10
+        let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
+        
+        timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
             if self.counter >= self.movements.count {
                 self.counter = 0
                 self.changeMovement(to: self.movements[self.counter])
@@ -64,11 +73,29 @@ class PotatoGameViewController: UIViewController {
             }
         }
         
-        timerToPause = Timer.scheduledTimer(withTimeInterval: 8, repeats: true) { (timer) in
-            self.timerToChangeMovement.invalidate()
-            self.performSegue(withIdentifier: "segue", sender: nil)
-            delegate.soundPlayer.stop()
-            timer.invalidate()
+        timerToPause = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToPause), repeats: true) { (timer) in
+            
+            if self.counterOfPauses < self.numberOfPlayers - 1 {
+            
+                self.timerToChangeMovement.invalidate()
+    //            self.gesture.isHidden = true
+    //            self.gestureNext.isHidden = true
+    //            self.gestureTitle.isHidden = true
+    //            self.gestureTitleNext.isHidden = true
+    //            self.youareout.isHidden = false
+    //            self.gestureGrid.image = UIImage(named: "youareoutGrid")
+    //            self.gestureGridNext.image = UIImage(named: "youareoutGrid")
+                self.performSegue(withIdentifier: "out", sender: nil)
+                delegate.soundPlayer.stop()
+                timer.invalidate()
+                self.counterOfPauses = self.counterOfPauses + 1
+            } else {
+                self.timerToChangeMovement.invalidate()
+                self.performSegue(withIdentifier: "out", sender: nil)
+                delegate.soundPlayer.stop()
+                timer.invalidate()
+                self.counterOfPauses = self.counterOfPauses + 1
+            }
         }
     }
     
@@ -85,7 +112,7 @@ class PotatoGameViewController: UIViewController {
                 self.gestureGridNext.alpha = 0.0
             }
             
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.2) {
                 self.gesture.alpha = 1.0
                 self.gestureNext.alpha = 0.0
                 self.gestureTitle.alpha = 1.0
@@ -94,6 +121,7 @@ class PotatoGameViewController: UIViewController {
             
             gridOnSecondChange = false
         } else {
+            
             gestureNext.image = UIImage(named: movement)
             gestureGridNext.image = UIImage(named: "\(movement)Grid")
             gestureTitleNext.image = UIImage(named: "\(movement)Title")
@@ -103,7 +131,7 @@ class PotatoGameViewController: UIViewController {
                 self.gestureGridNext.alpha = 1.0
             }
             
-            UIView.animate(withDuration: 0.5) {
+            UIView.animate(withDuration: 0.2) {
                 self.gesture.alpha = 0.0
                 self.gestureNext.alpha = 1.0
                 self.gestureTitle.alpha = 0.0
@@ -127,9 +155,11 @@ class PotatoGameViewController: UIViewController {
     
     // Sending current instance of PotatoGameViewController to allow the destination VC to resume timers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "segue" {
+        if segue.identifier == "out" {
             let destinationVC = segue.destination as! PotatoPlayerOutViewController
             destinationVC.potatoGame = self
+            destinationVC.timesPaused = self.counterOfPauses
+            destinationVC.numberOfPlayers = self.numberOfPlayers
         }
     }
 }
