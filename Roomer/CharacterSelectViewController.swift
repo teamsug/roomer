@@ -12,7 +12,7 @@ class PotatoCharacterSelectViewController: UIViewController {
 
     var numberOfPlayers = 3
     
-    @IBOutlet weak var discoBallImage: UIImageView!
+    var players: [UIImage] = [UIImage(named: "p1")!, UIImage(named: "p2")!, UIImage(named: "p3")!, UIImage(named: "p4")!, UIImage(named: "p5")!, UIImage(named: "p6")!, UIImage(named: "p7")!, UIImage(named: "p8")!]
     
     override func viewDidLoad() {
         super.viewDidLoad()

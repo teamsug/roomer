@@ -14,5 +14,6 @@ class PotatoCharactersCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.characterImage.adjustsImageWhenAncestorFocused = true
+        
     }
 }

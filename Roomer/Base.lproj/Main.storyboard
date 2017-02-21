@@ -232,26 +232,30 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="zR0-BJ-mLE">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nWy-0D-2FB">
                                 <rect key="frame" x="98" y="387" width="1724" height="307"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="PLB-dh-Y24">
-                                    <size key="itemSize" width="200" height="300"/>
+                                    <size key="itemSize" width="190" height="190"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="player" id="0WP-2H-hpp" customClass="PotatoCharactersCollectionViewCell" customModule="Roomer" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="188-HQ-iSH">
-                                                    <rect key="frame" x="8" y="8" width="184" height="284"/>
+                                                    <rect key="frame" x="8" y="8" width="190" height="190"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -261,14 +265,14 @@
                                         </connections>
                                     </collectionViewCell>
                                     <collectionViewCell opaque="NO" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="add" id="G4e-Ix-ru8" customClass="PotatoAddPlayerCollectionViewCell" customModule="Roomer" customModuleProvider="target">
-                                        <rect key="frame" x="218" y="0.0" width="200" height="300"/>
+                                        <rect key="frame" x="219" y="0.0" width="190" height="190"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="200" height="300"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="190" height="190"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wUT-te-EXe">
-                                                    <rect key="frame" x="8" y="8" width="184" height="284"/>
+                                                    <rect key="frame" x="8" y="8" width="190" height="190"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -303,15 +307,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-jU-NlE">
-                                <rect key="frame" x="684" y="68" width="553" height="294"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selectplayersinvertidoGrid" translatesAutoresizingMaskIntoConstraints="NO" id="7Yc-jU-NlE">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-bg-xXI">
-                                <rect key="frame" x="839" y="801" width="243" height="86"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selectplayersGrid" translatesAutoresizingMaskIntoConstraints="NO" id="0qZ-ZL-I4z">
+                                <rect key="frame" x="0.0" y="913" width="1920" height="167"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Let's Play"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hXr-bg-xXI">
+                                <rect key="frame" x="685" y="718" width="550" height="155"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="letsPlayButton"/>
                                 <connections>
                                     <action selector="nextScreenPressed:" destination="tBh-3y-ZcO" eventType="primaryActionTriggered" id="Dxc-Vw-i8o"/>
                                 </connections>
@@ -319,7 +326,6 @@
                         </subviews>
                     </view>
                     <connections>
-                        <outlet property="discoBallImage" destination="7Yc-jU-NlE" id="k2o-6g-nQQ"/>
                         <segue destination="EM2-8k-LVk" kind="show" identifier="segue" id="dF2-kF-Ra7"/>
                     </connections>
                 </viewController>
@@ -367,7 +373,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="t8C-iy-Xg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10908" y="75"/>
+            <point key="canvasLocation" x="11169" y="75"/>
         </scene>
         <!--Potato Winner Name View Controller-->
         <scene sceneID="HPY-Mk-1kR">
@@ -418,7 +424,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z1N-R6-qex" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="10586" y="2274"/>
+            <point key="canvasLocation" x="11169" y="2274"/>
         </scene>
         <!--Potato Game View Controller-->
         <scene sceneID="YxH-q2-Jma">
@@ -540,9 +546,12 @@
     </scenes>
     <resources>
         <image name="background" width="1920" height="1080"/>
+        <image name="letsPlayButton" width="559" height="164"/>
         <image name="oneleg" width="942" height="876"/>
         <image name="onelegTitle" width="971" height="145"/>
         <image name="righthandGrid" width="1920" height="172"/>
+        <image name="selectplayersGrid" width="1920" height="166"/>
+        <image name="selectplayersinvertidoGrid" width="1920" height="167"/>
         <image name="youareout" width="1497" height="1100"/>
         <image name="youareoutGrid" width="1920" height="172"/>
         <image name="yourule" width="1170" height="1075"/>
