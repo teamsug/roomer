@@ -8,6 +8,11 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Road_Rage.otf">
+            <string>RoadRage</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -322,6 +327,99 @@
             </objects>
             <point key="canvasLocation" x="5869" y="75"/>
         </scene>
+        <!--Potato Winner View Controller-->
+        <scene sceneID="TO9-sL-jm5">
+            <objects>
+                <viewController id="hvR-2Z-aEq" customClass="PotatoWinnerViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CJW-qB-R2d"/>
+                        <viewControllerLayoutGuide type="bottom" id="KJN-mS-LrI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZvV-4Q-cQc">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="xMr-Nv-XK2">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="yourule" translatesAutoresizingMaskIntoConstraints="NO" id="jsm-6P-fgf">
+                                <rect key="frame" x="375" y="111" width="1170" height="969"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Vpn-uX-6hZ">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ELDER" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mJi-Hf-O5C">
+                                <rect key="frame" x="20" y="68" width="1880" height="120"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RoadRage" family="Road Rage" pointSize="120"/>
+                                <color key="textColor" red="0.98539561033248901" green="0.99602502584457397" blue="0.015361410565674305" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="winnerNameLabel" destination="mJi-Hf-O5C" id="OpG-WO-vRT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="t8C-iy-Xg6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10908" y="75"/>
+        </scene>
+        <!--Potato Winner Name View Controller-->
+        <scene sceneID="HPY-Mk-1kR">
+            <objects>
+                <viewController id="cXR-XN-ShD" customClass="PotatoWinnerNameViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zkq-Ju-FD2"/>
+                        <viewControllerLayoutGuide type="bottom" id="6cB-sa-rnZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="557-vz-YlR">
+                        <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="7X3-cw-nbS">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <textField opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="winner's name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n7Q-sV-LOy">
+                                <rect key="frame" x="646" y="517" width="629" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
+                                <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvG-d5-2iO">
+                                <rect key="frame" x="863" y="795" width="195" height="86"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="donePressed:" destination="cXR-XN-ShD" eventType="primaryActionTriggered" id="4wG-DZ-3ni"/>
+                                    <segue destination="hvR-2Z-aEq" kind="show" identifier="winner" id="Fkt-HS-xx0"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Type the winner's name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6D8-jD-j19">
+                                <rect key="frame" x="20" y="85" width="1880" height="228"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RoadRage" family="Road Rage" pointSize="90"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </view>
+                    <connections>
+                        <outlet property="textField" destination="n7Q-sV-LOy" id="PkV-dI-5Y8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="z1N-R6-qex" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="10586" y="2274"/>
+        </scene>
         <!--Potato Game View Controller-->
         <scene sceneID="YxH-q2-Jma">
             <objects>
@@ -334,7 +432,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a4t-oU-TTL">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="a4t-oU-TTL">
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -358,103 +456,97 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9S0-uc-fFs">
-                                <rect key="frame" x="700" y="370" width="520" height="222"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthandGrid" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-aP-REo">
+                                <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Martelo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mOP-CX-2GI">
-                                <rect key="frame" x="827" y="630" width="267" height="55"/>
+                            <imageView userInteractionEnabled="NO" alpha="0.0" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="syA-Mw-94O">
+                                <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oneleg" translatesAutoresizingMaskIntoConstraints="NO" id="HKf-fn-ss2">
+                                <rect key="frame" x="489" y="102" width="942" height="876"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jKl-es-jR4">
+                                <rect key="frame" x="489" y="102" width="942" height="876"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onelegTitle" translatesAutoresizingMaskIntoConstraints="NO" id="uIi-qi-LsV">
+                                <rect key="frame" x="98" y="102" width="1724" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MM5-MR-9Uc">
+                                <rect key="frame" x="98" y="102" width="1724" height="147"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView hidden="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youareout" translatesAutoresizingMaskIntoConstraints="NO" id="gJY-sp-rDp">
+                                <rect key="frame" x="98" y="0.0" width="1724" height="1041"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="backgroundPotatoGame" destination="a4t-oU-TTL" id="m5l-Zy-Qws"/>
-                        <outlet property="gestureImage" destination="9S0-uc-fFs" id="BGM-6g-h3Y"/>
-                        <outlet property="gestureName" destination="mOP-CX-2GI" id="CGo-iv-6T0"/>
-                        <segue destination="d8u-QQ-cvV" kind="show" id="OBT-bF-tdp"/>
+                        <outlet property="gesture" destination="HKf-fn-ss2" id="fLZ-dp-bwN"/>
+                        <outlet property="gestureGrid" destination="4Rx-aP-REo" id="cJx-hN-v0f"/>
+                        <outlet property="gestureGridNext" destination="syA-Mw-94O" id="GDV-B8-IOZ"/>
+                        <outlet property="gestureNext" destination="jKl-es-jR4" id="fWF-Xe-ff2"/>
+                        <outlet property="gestureTitle" destination="uIi-qi-LsV" id="WD3-Sr-YGV"/>
+                        <outlet property="gestureTitleNext" destination="MM5-MR-9Uc" id="FT8-1K-doC"/>
+                        <outlet property="youareout" destination="gJY-sp-rDp" id="h4n-dv-LI9"/>
+                        <segue destination="bX2-9O-omk" kind="show" identifier="out" id="lnN-y4-UcZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0XT-ZJ-viB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8210" y="75"/>
+            <point key="canvasLocation" x="8192" y="75"/>
         </scene>
-        <!--Potato Winner View Controller-->
-        <scene sceneID="vUi-B5-PMv">
+        <!--Potato Player Out View Controller-->
+        <scene sceneID="suw-wd-NsK">
             <objects>
-                <viewController id="d8u-QQ-cvV" customClass="PotatoWinnerViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="playerout" id="bX2-9O-omk" customClass="PotatoPlayerOutViewController" customModule="Roomer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Xvc-0u-QCx"/>
-                        <viewControllerLayoutGuide type="bottom" id="OPf-Ou-S1X"/>
+                        <viewControllerLayoutGuide type="top" id="gu2-ke-8wv"/>
+                        <viewControllerLayoutGuide type="bottom" id="Glb-cO-dmy"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="EZU-kF-UW3">
+                    <view key="view" contentMode="scaleToFill" id="YJi-5C-yGK">
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Q69-sp-OUL">
-                                <rect key="frame" x="0.0" y="1020" width="1920" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fYR-AO-bV0">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="60"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HDK-qK-paL">
-                                <rect key="frame" x="1829" y="0.0" width="90" height="1080"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3cJ-aO-cVx">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="1080"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uNR-BH-iVh">
-                                <rect key="frame" x="744" y="352" width="432" height="230"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="oa9-d9-kjf">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bue-CY-iD5">
-                                <rect key="frame" x="912" y="659" width="97" height="46"/>
+                            <imageView clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youareoutGrid" translatesAutoresizingMaskIntoConstraints="NO" id="zk3-rA-1bX">
+                                <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1m-T4-Wwt">
-                                <rect key="frame" x="1087" y="819" width="254" height="86"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="youareout" translatesAutoresizingMaskIntoConstraints="NO" id="JWz-xQ-Vg8">
+                                <rect key="frame" x="212" y="0.0" width="1497" height="1041"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Play again"/>
-                                <connections>
-                                    <action selector="playAgainPressed:" destination="d8u-QQ-cvV" eventType="primaryActionTriggered" id="3sZ-aj-cwU"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nA0-KG-rZB">
-                                <rect key="frame" x="655" y="819" width="133" height="86"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="OK"/>
-                                <connections>
-                                    <action selector="okPressed:" destination="d8u-QQ-cvV" eventType="primaryActionTriggered" id="5ZX-7a-cd0"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
                     <connections>
-                        <outlet property="winnerImage" destination="uNR-BH-iVh" id="pQm-VH-LbD"/>
-                        <outlet property="winnerName" destination="Bue-CY-iD5" id="gHQ-ST-6KV"/>
+                        <segue destination="cXR-XN-ShD" kind="show" identifier="winner" id="Blv-zB-4nZ"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yjw-hQ-BMk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95b-xU-ytT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="11088" y="75"/>
+            <point key="canvasLocation" x="8192" y="2274"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="background" width="1920" height="1080"/>
+        <image name="oneleg" width="942" height="876"/>
+        <image name="onelegTitle" width="971" height="145"/>
+        <image name="righthandGrid" width="1920" height="172"/>
+        <image name="youareout" width="1497" height="1100"/>
+        <image name="youareoutGrid" width="1920" height="172"/>
+        <image name="yourule" width="1170" height="1075"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="mSM-kl-Fub"/>
     </inferredMetricsTieBreakers>

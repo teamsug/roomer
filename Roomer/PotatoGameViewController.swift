@@ -10,40 +10,53 @@ import UIKit
 import QuartzCore
 
 class PotatoGameViewController: UIViewController {
-
-    @IBOutlet weak var backgroundPotatoGame: UIImageView!
-    @IBOutlet weak var gestureName: UILabel!
-    @IBOutlet weak var gestureImage: UIImageView!
     
-    var numberOfPlayers: Int?
+    // Background outlet to setup background image
+    @IBOutlet weak var backgroundPotatoGame: UIImageView!
+
+    // Outlets to be changed by timers
+    @IBOutlet weak var gesture: UIImageView!
+    @IBOutlet weak var gestureNext: UIImageView!
+    @IBOutlet weak var gestureGrid: UIImageView!
+    @IBOutlet weak var gestureGridNext: UIImageView!
+    @IBOutlet weak var gestureTitle: UIImageView!
+    @IBOutlet weak var gestureTitleNext: UIImageView!
+    @IBOutlet weak var youareout: UIImageView!
+    
+    // Flag to control image changes
+    var gridOnSecondChange: Bool = false
+    
+    // Integer to check how much pauses are needed to finish game
+    var numberOfPlayers: Int!
+    
+    var counterOfPauses = 1
+    
+    // Counter to pass through movements array
     var counter = 0
-    var pause = 3
-    var gestures: [UIImage] = [UIImage.init(named: "appletv")!, UIImage.init(named: "appletv2")!, UIImage.init(named: "appletv3")!]
+    
+    // Number of times the game was paused
+    var timesPassed = 0
+    
+    // Timers to change movement and to stop game
+    var timerToChangeMovement: Timer!
+    var timerToPause: Timer!
+    
+    // Array of movements, strings of images are mounted with the movements array content
+    var movements: [String] = ["hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
-        let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.soundPlayer.stop()
-        
-        CreateView{
-        self.changeMusic(music: "02")
-        
-        let timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-            if self.counter >= self.gestures.count {
-                    self.counter = 0
-                    self.gestureImage.image = self.gestures[self.counter+1]
-                    self.changeMusic(music: "01")
-                } else {
-                    self.gestureImage.image = self.gestures[self.counter]
-                    self.counter = self.counter + 1
-                    self.changeMusic(music: "03")
-                }
-            }
-            let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-                let result = arc4random_uniform(5 - 1) + 1
-                self.gestureName.text = String(result)
-            }
+//        let delegate = UIApplication.shared.delegate as! AppDelegate
+//        delegate.soundPlayer.stop()
+            self.startTimers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        CreateView {
+            
         }
     }
 
@@ -52,6 +65,98 @@ class PotatoGameViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    func startTimers() {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+
+        //CreateView {
+        delay(3) {
+        
+            self.changeMusic(music: "02")
+            
+            let timeIntervalToChange = arc4random_uniform(15 - 10) + 10
+            let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
+            
+            self.timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
+                if self.counter >= self.movements.count {
+                    self.counter = 0
+                    self.changeMovement(to: self.movements[self.counter])
+                } else {
+                    self.changeMovement(to: self.movements[self.counter])
+                    self.counter = self.counter + 1
+                }
+            }
+            
+            self.timerToPause = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToPause), repeats: true) { (timer) in
+                
+                if self.counterOfPauses < self.numberOfPlayers - 1 {
+                
+                    self.timerToChangeMovement.invalidate()
+        //            self.gesture.isHidden = true
+        //            self.gestureNext.isHidden = true
+        //            self.gestureTitle.isHidden = true
+        //            self.gestureTitleNext.isHidden = true
+        //            self.youareout.isHidden = false
+        //            self.gestureGrid.image = UIImage(named: "youareoutGrid")
+        //            self.gestureGridNext.image = UIImage(named: "youareoutGrid")
+                    self.performSegue(withIdentifier: "out", sender: nil)
+                    delegate.soundPlayer.stop()
+                    timer.invalidate()
+                    self.counterOfPauses = self.counterOfPauses + 1
+                } else {
+                    self.timerToChangeMovement.invalidate()
+                    self.performSegue(withIdentifier: "out", sender: nil)
+                    delegate.soundPlayer.stop()
+                    timer.invalidate()
+                    self.counterOfPauses = self.counterOfPauses + 1
+                }
+            }
+        }
+    }
+    
+    // Called by function startTimers on every x seconds
+    func changeMovement(to movement: String) {
+        
+        if gridOnSecondChange {
+            gesture.image = UIImage(named: movement)
+            gestureGrid.image = UIImage(named: "\(movement)Grid")
+            gestureTitle.image = UIImage(named: "\(movement)Title")
+            
+            UIView.animate(withDuration: 1.5) {
+                self.gestureGrid.alpha = 1.0
+                self.gestureGridNext.alpha = 0.0
+            }
+            
+            UIView.animate(withDuration: 0.2) {
+                self.gesture.alpha = 1.0
+                self.gestureNext.alpha = 0.0
+                self.gestureTitle.alpha = 1.0
+                self.gestureTitleNext.alpha = 0.0
+            }
+            
+            gridOnSecondChange = false
+        } else {
+            
+            gestureNext.image = UIImage(named: movement)
+            gestureGridNext.image = UIImage(named: "\(movement)Grid")
+            gestureTitleNext.image = UIImage(named: "\(movement)Title")
+            
+            UIView.animate(withDuration: 1.5) {
+                self.gestureGrid.alpha = 0.0
+                self.gestureGridNext.alpha = 1.0
+            }
+            
+            UIView.animate(withDuration: 0.2) {
+                self.gesture.alpha = 0.0
+                self.gestureNext.alpha = 1.0
+                self.gestureTitle.alpha = 0.0
+                self.gestureTitleNext.alpha = 1.0
+            }
+            
+            gridOnSecondChange = true
+        }
+    }
+    
+    // Called by function changeMovement to also change the music that's currently playing
     func changeMusic(music: String){
         let delegate = UIApplication.shared.delegate as! AppDelegate
         delegate.soundPlayer.stop()
@@ -71,19 +176,23 @@ class PotatoGameViewController: UIViewController {
         }
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // Sending current instance of PotatoGameViewController to allow the destination VC to resume timers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "out" {
+            let destinationVC = segue.destination as! PotatoPlayerOutViewController
+            destinationVC.potatoGame = self
+            destinationVC.timesPaused = self.counterOfPauses
+            destinationVC.numberOfPlayers = self.numberOfPlayers
+        }
     }
-    */
-
+    public func delay(_ time: Int, finish: @escaping () -> Void) {
+        let delay = DispatchTime.now() + .seconds(time)
+        DispatchQueue.main.asyncAfter(deadline: delay, execute: finish)
+    }
 }
 
 class CustomView: UIView{
+    
 
     let label: UILabel = UILabel()
 
@@ -97,10 +206,12 @@ class CustomView: UIView{
     }
     func addCustomView(){
         label.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
-        label.backgroundColor = UIColor.white
         label.textAlignment = NSTextAlignment.center
+        label.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+
+        label.font = UIFont(name: "RoadRage", size: 250.0)
         label.text = "1"
-        label.backgroundColor = UIColor.red
+        label.textColor = UIColor(colorLiteralRed: 167.0, green: 195.0, blue: 216.0, alpha: 1.0)
         self.addSubview(label)
         
         let viewAnimate = secondView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
@@ -113,7 +224,7 @@ class CustomView: UIView{
     }
     
     func startAnimation(completionHandler: @escaping () -> Void) {
-        let timeToStart = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
             self.label.alpha = 1.0
             UIView.animate(withDuration: 1, animations: {
                 self.label.alpha = 0.0
@@ -139,11 +250,12 @@ class secondView: UIView{
     
     func addACowdown(){
         conter.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
-        conter.backgroundColor = UIColor.white
         conter.textAlignment = NSTextAlignment.center
+        conter.font = UIFont(name: "RoadRage", size: 250.0)
         conter.text = "2"
+        conter.textColor = UIColor(colorLiteralRed: 167.0, green: 195.0, blue: 216.0, alpha: 1.0)
+        conter.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         conter.alpha = 1.0
-        conter.backgroundColor = UIColor.blue
         self.addSubview(conter)
         
         let viewAnimate = lastView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
@@ -156,7 +268,7 @@ class secondView: UIView{
     }
     
     func startAnimation(completionHandler: @escaping () -> Void) {
-        let timeToStart = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
             UIView.animate(withDuration: 1, animations: {
                 self.conter.alpha = 0.0
             })
@@ -180,18 +292,19 @@ class lastView: UIView{
     
     func addABackdown(){
         backCounter.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
-        backCounter.backgroundColor = UIColor.white
         backCounter.textAlignment = NSTextAlignment.center
+        backCounter.font = UIFont(name: "RoadRage", size: 250.0)
         backCounter.text = "3"
+        backCounter.textColor = UIColor(colorLiteralRed: 167.0, green: 195.0, blue: 216.0, alpha: 1.0)
         backCounter.alpha = 1.0
-        backCounter.backgroundColor = UIColor.green
+        backCounter.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
         self.addSubview(backCounter)
     }
     func startAnimation(completionHandler: @escaping () -> Void) {
-        let timeToStart = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
             UIView.animate(withDuration: 1, animations: {
                 self.backCounter.alpha = 0.0
             })
         }
-    }
+     }
 }
