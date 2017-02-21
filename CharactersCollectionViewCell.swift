@@ -14,6 +14,7 @@ class PotatoCharactersCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.characterImage.adjustsImageWhenAncestorFocused = true
-        
+        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.masksToBounds = true
     }
 }

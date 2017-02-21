@@ -15,5 +15,7 @@ class PotatoAddPlayerCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.addImage.adjustsImageWhenAncestorFocused = true
+        self.layer.cornerRadius = self.frame.height / 2
+        self.layer.masksToBounds = true
     }
 }
