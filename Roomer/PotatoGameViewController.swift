@@ -14,6 +14,7 @@ class PotatoGameViewController: UIViewController {
     @IBOutlet weak var backgroundPotatoGame: UIImageView!
     @IBOutlet weak var gestureName: UILabel!
     @IBOutlet weak var gestureImage: UIImageView!
+    
     var numberOfPlayers: Int?
     var counter = 0
     var pause = 3
@@ -39,7 +40,6 @@ class PotatoGameViewController: UIViewController {
                     self.changeMusic(music: "03")
                 }
             }
-        
             let timerToPause = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
                 let result = arc4random_uniform(5 - 1) + 1
                 self.gestureName.text = String(result)
@@ -100,6 +100,7 @@ class CustomView: UIView{
         label.backgroundColor = UIColor.white
         label.textAlignment = NSTextAlignment.center
         label.text = "1"
+        label.backgroundColor = UIColor.red
         self.addSubview(label)
         
         let viewAnimate = secondView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
@@ -112,9 +113,9 @@ class CustomView: UIView{
     }
     
     func startAnimation(completionHandler: @escaping () -> Void) {
-        let timeToStart = Timer.scheduledTimer(withTimeInterval: 7, repeats: true) { (timer) in
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 3, repeats: true) { (timer) in
             self.label.alpha = 1.0
-            UIView.animate(withDuration: 4, animations: {
+            UIView.animate(withDuration: 1, animations: {
                 self.label.alpha = 0.0
             }, completion: { (true) in
                 completionHandler()
@@ -142,6 +143,7 @@ class secondView: UIView{
         conter.textAlignment = NSTextAlignment.center
         conter.text = "2"
         conter.alpha = 1.0
+        conter.backgroundColor = UIColor.blue
         self.addSubview(conter)
         
         let viewAnimate = lastView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
@@ -154,8 +156,8 @@ class secondView: UIView{
     }
     
     func startAnimation(completionHandler: @escaping () -> Void) {
-        let timeToStart = Timer.scheduledTimer(withTimeInterval: 4, repeats: true) { (timer) in
-            UIView.animate(withDuration: 3, animations: {
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
+            UIView.animate(withDuration: 1, animations: {
                 self.conter.alpha = 0.0
             })
         }
@@ -182,11 +184,12 @@ class lastView: UIView{
         backCounter.textAlignment = NSTextAlignment.center
         backCounter.text = "3"
         backCounter.alpha = 1.0
+        backCounter.backgroundColor = UIColor.green
         self.addSubview(backCounter)
     }
     func startAnimation(completionHandler: @escaping () -> Void) {
-        let timeToStart = Timer.scheduledTimer(withTimeInterval: 2, repeats: true) { (timer) in
-            UIView.animate(withDuration: 2, animations: {
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            UIView.animate(withDuration: 1, animations: {
                 self.backCounter.alpha = 0.0
             })
         }
