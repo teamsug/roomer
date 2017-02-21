@@ -7,12 +7,13 @@
 //
 
 import UIKit
+import QuartzCore
 
 class PotatoGameViewController: UIViewController {
     
     // Background outlet to setup background image
     @IBOutlet weak var backgroundPotatoGame: UIImageView!
-    
+
     // Outlets to be changed by timers
     @IBOutlet weak var gesture: UIImageView!
     @IBOutlet weak var gestureNext: UIImageView!
@@ -47,7 +48,16 @@ class PotatoGameViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
-        startTimers()
+//        let delegate = UIApplication.shared.delegate as! AppDelegate
+//        delegate.soundPlayer.stop()
+            self.startTimers()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        CreateView {
+            
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -58,43 +68,47 @@ class PotatoGameViewController: UIViewController {
     func startTimers() {
         let delegate = UIApplication.shared.delegate as! AppDelegate
 
-        changeMusic(music: "02")
+        //CreateView {
+        delay(3) {
         
-        let timeIntervalToChange = arc4random_uniform(15 - 10) + 10
-        let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
-        
-        timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
-            if self.counter >= self.movements.count {
-                self.counter = 0
-                self.changeMovement(to: self.movements[self.counter])
-            } else {
-                self.changeMovement(to: self.movements[self.counter])
-                self.counter = self.counter + 1
+            self.changeMusic(music: "02")
+            
+            let timeIntervalToChange = arc4random_uniform(15 - 10) + 10
+            let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
+            
+            self.timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
+                if self.counter >= self.movements.count {
+                    self.counter = 0
+                    self.changeMovement(to: self.movements[self.counter])
+                } else {
+                    self.changeMovement(to: self.movements[self.counter])
+                    self.counter = self.counter + 1
+                }
             }
-        }
-        
-        timerToPause = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToPause), repeats: true) { (timer) in
             
-            if self.counterOfPauses < self.numberOfPlayers - 1 {
-            
-                self.timerToChangeMovement.invalidate()
-    //            self.gesture.isHidden = true
-    //            self.gestureNext.isHidden = true
-    //            self.gestureTitle.isHidden = true
-    //            self.gestureTitleNext.isHidden = true
-    //            self.youareout.isHidden = false
-    //            self.gestureGrid.image = UIImage(named: "youareoutGrid")
-    //            self.gestureGridNext.image = UIImage(named: "youareoutGrid")
-                self.performSegue(withIdentifier: "out", sender: nil)
-                delegate.soundPlayer.stop()
-                timer.invalidate()
-                self.counterOfPauses = self.counterOfPauses + 1
-            } else {
-                self.timerToChangeMovement.invalidate()
-                self.performSegue(withIdentifier: "out", sender: nil)
-                delegate.soundPlayer.stop()
-                timer.invalidate()
-                self.counterOfPauses = self.counterOfPauses + 1
+            self.timerToPause = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToPause), repeats: true) { (timer) in
+                
+                if self.counterOfPauses < self.numberOfPlayers - 1 {
+                
+                    self.timerToChangeMovement.invalidate()
+        //            self.gesture.isHidden = true
+        //            self.gestureNext.isHidden = true
+        //            self.gestureTitle.isHidden = true
+        //            self.gestureTitleNext.isHidden = true
+        //            self.youareout.isHidden = false
+        //            self.gestureGrid.image = UIImage(named: "youareoutGrid")
+        //            self.gestureGridNext.image = UIImage(named: "youareoutGrid")
+                    self.performSegue(withIdentifier: "out", sender: nil)
+                    delegate.soundPlayer.stop()
+                    timer.invalidate()
+                    self.counterOfPauses = self.counterOfPauses + 1
+                } else {
+                    self.timerToChangeMovement.invalidate()
+                    self.performSegue(withIdentifier: "out", sender: nil)
+                    delegate.soundPlayer.stop()
+                    timer.invalidate()
+                    self.counterOfPauses = self.counterOfPauses + 1
+                }
             }
         }
     }
@@ -153,6 +167,15 @@ class PotatoGameViewController: UIViewController {
         delegate.soundPlayer.play()
     }
     
+    func CreateView(completionHandler: @escaping () -> Void){
+        let customView = CustomView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
+        self.view.addSubview(customView)
+        customView.startAnimation{
+            customView.removeFromSuperview()
+            completionHandler()
+        }
+    }
+
     // Sending current instance of PotatoGameViewController to allow the destination VC to resume timers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "out" {
@@ -162,4 +185,126 @@ class PotatoGameViewController: UIViewController {
             destinationVC.numberOfPlayers = self.numberOfPlayers
         }
     }
+    public func delay(_ time: Int, finish: @escaping () -> Void) {
+        let delay = DispatchTime.now() + .seconds(time)
+        DispatchQueue.main.asyncAfter(deadline: delay, execute: finish)
+    }
+}
+
+class CustomView: UIView{
+    
+
+    let label: UILabel = UILabel()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+            self.addCustomView()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    func addCustomView(){
+        label.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
+        label.textAlignment = NSTextAlignment.center
+        label.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+
+        label.font = UIFont(name: "RoadRage", size: 250.0)
+        label.text = "1"
+        label.textColor = UIColor(colorLiteralRed: 167.0, green: 195.0, blue: 216.0, alpha: 1.0)
+        self.addSubview(label)
+        
+        let viewAnimate = secondView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
+        self.addSubview(viewAnimate)
+        
+        viewAnimate.startAnimation {
+            viewAnimate.removeFromSuperview()
+        }
+        
+    }
+    
+    func startAnimation(completionHandler: @escaping () -> Void) {
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 3, repeats: false) { (timer) in
+            self.label.alpha = 1.0
+            UIView.animate(withDuration: 1, animations: {
+                self.label.alpha = 0.0
+            }, completion: { (true) in
+                completionHandler()
+            })
+        }
+    }
+}
+
+class secondView: UIView{
+    
+    let conter: UILabel = UILabel()
+
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addACowdown()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addACowdown(){
+        conter.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
+        conter.textAlignment = NSTextAlignment.center
+        conter.font = UIFont(name: "RoadRage", size: 250.0)
+        conter.text = "2"
+        conter.textColor = UIColor(colorLiteralRed: 167.0, green: 195.0, blue: 216.0, alpha: 1.0)
+        conter.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        conter.alpha = 1.0
+        self.addSubview(conter)
+        
+        let viewAnimate = lastView(frame: CGRect(x: 0.0, y: 0.0, width: 1920, height: 1080))
+        self.addSubview(viewAnimate)
+        
+        viewAnimate.startAnimation {
+            viewAnimate.removeFromSuperview()
+        }
+        
+    }
+    
+    func startAnimation(completionHandler: @escaping () -> Void) {
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 2, repeats: false) { (timer) in
+            UIView.animate(withDuration: 1, animations: {
+                self.conter.alpha = 0.0
+            })
+        }
+    }
+}
+
+
+class lastView: UIView{
+
+    let backCounter: UILabel = UILabel()
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        self.addABackdown()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func addABackdown(){
+        backCounter.frame = CGRect(x: 0, y: 0, width: 1920, height: 1080)
+        backCounter.textAlignment = NSTextAlignment.center
+        backCounter.font = UIFont(name: "RoadRage", size: 250.0)
+        backCounter.text = "3"
+        backCounter.textColor = UIColor(colorLiteralRed: 167.0, green: 195.0, blue: 216.0, alpha: 1.0)
+        backCounter.alpha = 1.0
+        backCounter.backgroundColor = UIColor(patternImage: UIImage(named: "background")!)
+        self.addSubview(backCounter)
+    }
+    func startAnimation(completionHandler: @escaping () -> Void) {
+        let timeToStart = Timer.scheduledTimer(withTimeInterval: 1, repeats: false) { (timer) in
+            UIView.animate(withDuration: 1, animations: {
+                self.backCounter.alpha = 0.0
+            })
+        }
+     }
 }
