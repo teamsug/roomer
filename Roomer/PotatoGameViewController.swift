@@ -73,7 +73,7 @@ class PotatoGameViewController: UIViewController {
         
             self.changeMusic(music: "02")
             
-            let timeIntervalToChange = arc4random_uniform(5 - 3) + 5
+            let timeIntervalToChange = arc4random_uniform(13 - 10) + 10
             let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
             
             self.timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
