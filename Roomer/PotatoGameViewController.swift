@@ -32,7 +32,7 @@ class PotatoGameViewController: UIViewController {
     var counterOfPauses = 1
     
     // Counter to pass through movements array
-    var counter = 0
+    var counter = 1
     
     // Number of times the game was paused
     var timesPassed = 0
@@ -42,7 +42,7 @@ class PotatoGameViewController: UIViewController {
     var timerToPause: Timer!
     
     // Array of movements, strings of images are mounted with the movements array content
-    var movements: [String] = ["hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
+    var movements: [String] = ["pass", "hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -73,7 +73,7 @@ class PotatoGameViewController: UIViewController {
         
             self.changeMusic(music: "02")
             
-            let timeIntervalToChange = arc4random_uniform(15 - 10) + 10
+            let timeIntervalToChange = arc4random_uniform(5 - 3) + 5
             let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
             
             self.timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
@@ -81,6 +81,7 @@ class PotatoGameViewController: UIViewController {
                     self.counter = 0
                     self.changeMovement(to: self.movements[self.counter])
                 } else {
+                    //let nextMovementIndex = arc4random_uniform(self.movements.count - 1)
                     self.changeMovement(to: self.movements[self.counter])
                     self.counter = self.counter + 1
                 }

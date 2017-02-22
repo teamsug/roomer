@@ -115,13 +115,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-01-1ti">
-                                <rect key="frame" x="0.0" y="1020" width="1920" height="60"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="hotpotato" translatesAutoresizingMaskIntoConstraints="NO" id="Xzv-Zq-X5V">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fog-4D-aGE">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="60"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqk-RN-M6M">
+                                <rect key="frame" x="1830" y="0.0" width="90" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
@@ -130,37 +130,37 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Dqk-RN-M6M">
-                                <rect key="frame" x="1830" y="0.0" width="90" height="1080"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fog-4D-aGE">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Super Ultra Batata Quente" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5g6-JI-jIC">
-                                <rect key="frame" x="509" y="218" width="902" height="168"/>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Yhi-01-1ti">
+                                <rect key="frame" x="0.0" y="1020" width="1920" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D7L-9T-2Ia">
-                                <rect key="frame" x="748" y="545" width="424" height="218"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CYr-QO-IL9">
+                                <rect key="frame" x="740" y="933" width="440" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RoadRage" family="Road Rage" pointSize="40"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Play"/>
+                                <state key="normal" title="TAP TO PLAY"/>
                                 <connections>
-                                    <action selector="playButtonPressed:" destination="wRG-aD-I4M" eventType="primaryActionTriggered" id="YFU-1G-kdr"/>
+                                    <action selector="playPressed:" destination="wRG-aD-I4M" eventType="primaryActionTriggered" id="o7P-If-KXJ"/>
                                 </connections>
                             </button>
                         </subviews>
                     </view>
                     <connections>
+                        <outlet property="tapToPlayButton" destination="CYr-QO-IL9" id="0Ab-FD-1Zp"/>
                         <segue destination="tBh-3y-ZcO" kind="show" identifier="character" id="eSq-D8-H0N"/>
                         <segue destination="fGx-4R-d6p" kind="show" identifier="tutorial" id="CSB-lb-P6d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6wf-7F-Rpx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3190" y="75"/>
+            <point key="canvasLocation" x="3060" y="49"/>
         </scene>
         <!--Tutorial View Controller-->
         <scene sceneID="T8j-SY-3o0">
@@ -418,7 +418,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="righthandGrid" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-aP-REo">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="passGrid" translatesAutoresizingMaskIntoConstraints="NO" id="4Rx-aP-REo">
                                 <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -426,7 +426,7 @@
                                 <rect key="frame" x="0.0" y="908" width="1920" height="172"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="oneleg" translatesAutoresizingMaskIntoConstraints="NO" id="HKf-fn-ss2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="pass" translatesAutoresizingMaskIntoConstraints="NO" id="HKf-fn-ss2">
                                 <rect key="frame" x="489" y="102" width="942" height="876"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -434,7 +434,7 @@
                                 <rect key="frame" x="489" y="102" width="942" height="876"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="onelegTitle" translatesAutoresizingMaskIntoConstraints="NO" id="uIi-qi-LsV">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="passTitle" translatesAutoresizingMaskIntoConstraints="NO" id="uIi-qi-LsV">
                                 <rect key="frame" x="98" y="102" width="1724" height="147"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -502,10 +502,11 @@
     </scenes>
     <resources>
         <image name="background" width="1920" height="1080"/>
+        <image name="hotpotato" width="2560" height="1440"/>
         <image name="letsPlayButton" width="559" height="164"/>
-        <image name="oneleg" width="942" height="876"/>
-        <image name="onelegTitle" width="971" height="145"/>
-        <image name="righthandGrid" width="1920" height="172"/>
+        <image name="pass" width="942" height="876"/>
+        <image name="passGrid" width="1920" height="172"/>
+        <image name="passTitle" width="528" height="145"/>
         <image name="selectplayersGrid" width="1920" height="166"/>
         <image name="selectplayersinvertidoGrid" width="1920" height="167"/>
         <image name="youareout" width="1497" height="1100"/>
@@ -513,6 +514,6 @@
         <image name="yourule" width="1170" height="1075"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="mSM-kl-Fub"/>
+        <segue reference="eSq-D8-H0N"/>
     </inferredMetricsTieBreakers>
 </document>

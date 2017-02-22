@@ -11,12 +11,16 @@ import UIKit
 class PotatoViewController: UIViewController {
     
     var userDefaults = UserDefaults.standard
+    @IBOutlet weak var tapToPlayButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         changeMusic(music: "03")
-        // Do any additional setup after loading the view.
+        
+        let timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: "animate", userInfo: nil, repeats: true)
+        
+         //Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +28,17 @@ class PotatoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func playButtonPressed(_ sender: UIButton) {
+    func animate() {
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            self.tapToPlayButton.alpha = 0.0
+        }) { (bool) in
+            UIView.animate(withDuration: 0.5, animations: {
+                self.tapToPlayButton.alpha = 1.0
+            })
+        }
+    }
+    @IBAction func playPressed(_ sender: Any) {
         if !userDefaults.bool(forKey: "firstTimeInGame") {
             performSegue(withIdentifier: "tutorial", sender: nil)
             userDefaults.set(true, forKey: "firstTimeInGame")
