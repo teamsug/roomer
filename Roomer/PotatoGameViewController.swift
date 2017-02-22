@@ -55,6 +55,8 @@ class PotatoGameViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.soundPlayer.stop()
         CreateView {
             
         }
@@ -71,7 +73,7 @@ class PotatoGameViewController: UIViewController {
         //CreateView {
         delay(3) {
         
-            self.changeMusic(music: "02")
+            self.changeMusic(music: "Blazars")
             
             let timeIntervalToChange = arc4random_uniform(13 - 10) + 10
             let timeIntervalToPause = arc4random_uniform(35 - 25) + 25

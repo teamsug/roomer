@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		67182F611E562FE600E30A0F /* PotatoPlayerOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */; };
+		6740263F1E5E1A8C00E3245C /* Blazars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6740263E1E5E1A8C00E3245C /* Blazars.mp3 */; };
 		6757FB171E4BA0C800311526 /* PotatoWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */; };
 		677CD8571E5B8EB60055D473 /* PotatoWinnerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */; };
 		677CD85C1E5B941E0055D473 /* Road_Rage.otf in Resources */ = {isa = PBXBuildFile; fileRef = 677CD85B1E5B93FE0055D473 /* Road_Rage.otf */; };
@@ -29,6 +30,7 @@
 
 /* Begin PBXFileReference section */
 		67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoPlayerOutViewController.swift; sourceTree = "<group>"; };
+		6740263E1E5E1A8C00E3245C /* Blazars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Blazars.mp3; sourceTree = "<group>"; };
 		6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerViewController.swift; sourceTree = "<group>"; };
 		677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerNameViewController.swift; sourceTree = "<group>"; };
 		677CD85B1E5B93FE0055D473 /* Road_Rage.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Road_Rage.otf; sourceTree = "<group>"; };
@@ -84,6 +86,7 @@
 				67A1A5B71E491BF400FAD140 /* Assets.xcassets */,
 				B43547411E524F050063F3B5 /* 01.mp3 */,
 				B43547421E524F050063F3B5 /* 02.mp3 */,
+				6740263E1E5E1A8C00E3245C /* Blazars.mp3 */,
 				B43547431E524F050063F3B5 /* 03.mp3 */,
 			);
 			name = Resources;
@@ -206,6 +209,7 @@
 				677CD85C1E5B941E0055D473 /* Road_Rage.otf in Resources */,
 				B43547441E524F050063F3B5 /* 01.mp3 in Resources */,
 				B43547451E524F050063F3B5 /* 02.mp3 in Resources */,
+				6740263F1E5E1A8C00E3245C /* Blazars.mp3 in Resources */,
 				67A1A5B81E491BF400FAD140 /* Assets.xcassets in Resources */,
 				67A1A5B61E491BF400FAD140 /* Main.storyboard in Resources */,
 				B43547461E524F050063F3B5 /* 03.mp3 in Resources */,
