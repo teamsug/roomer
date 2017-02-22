@@ -60,7 +60,7 @@ extension PotatoCharacterSelectViewController: UICollectionViewDataSource, UICol
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if numberOfPlayers == 9{
             return 8
-        }else{
+        } else {
             return numberOfPlayers
         }
     }
