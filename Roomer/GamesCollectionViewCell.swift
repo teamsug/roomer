@@ -15,5 +15,6 @@ class GamesCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.gameImage.adjustsImageWhenAncestorFocused = true
+        self.gameImage.contentMode = .scaleAspectFit
     }
 }

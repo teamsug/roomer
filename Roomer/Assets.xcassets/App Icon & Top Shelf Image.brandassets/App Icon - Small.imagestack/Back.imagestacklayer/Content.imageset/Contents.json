@@ -2,6 +2,7 @@
   "images" : [
     {
       "idiom" : "tv",
+      "filename" : "clouds.png",
       "scale" : "1x"
     }
   ],
