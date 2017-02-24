@@ -9,6 +9,19 @@
 /* Begin PBXBuildFile section */
 		67182F611E562FE600E30A0F /* PotatoPlayerOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */; };
 		6740263F1E5E1A8C00E3245C /* Blazars.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 6740263E1E5E1A8C00E3245C /* Blazars.mp3 */; };
+		674DC9641E5F8CDA00487C55 /* yourule.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC95B1E5F8CDA00487C55 /* yourule.mp3 */; };
+		674DC9651E5F8CDA00487C55 /* righthand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC95C1E5F8CDA00487C55 /* righthand.mp3 */; };
+		674DC9661E5F8CDA00487C55 /* reverse.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC95D1E5F8CDA00487C55 /* reverse.mp3 */; };
+		674DC9671E5F8CDA00487C55 /* pass.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC95E1E5F8CDA00487C55 /* pass.mp3 */; };
+		674DC9681E5F8CDA00487C55 /* oneleg.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC95F1E5F8CDA00487C55 /* oneleg.mp3 */; };
+		674DC9691E5F8CDA00487C55 /* lefthand.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC9601E5F8CDA00487C55 /* lefthand.mp3 */; };
+		674DC96A1E5F8CDA00487C55 /* lasso.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC9611E5F8CDA00487C55 /* lasso.mp3 */; };
+		674DC96B1E5F8CDA00487C55 /* jump.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC9621E5F8CDA00487C55 /* jump.mp3 */; };
+		674DC96C1E5F8CDA00487C55 /* hammer.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC9631E5F8CDA00487C55 /* hammer.mp3 */; };
+		674DC9711E5F8CE800487C55 /* Back in time.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC96D1E5F8CE800487C55 /* Back in time.mp3 */; };
+		674DC9721E5F8CE800487C55 /* Can you feel it.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC96E1E5F8CE800487C55 /* Can you feel it.mp3 */; };
+		674DC9731E5F8CE800487C55 /* Supersonic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC96F1E5F8CE800487C55 /* Supersonic.mp3 */; };
+		674DC9741E5F8CE800487C55 /* NorthernLights.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 674DC9701E5F8CE800487C55 /* NorthernLights.mp3 */; };
 		6757FB171E4BA0C800311526 /* PotatoWinnerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */; };
 		677CD8571E5B8EB60055D473 /* PotatoWinnerNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */; };
 		677CD85C1E5B941E0055D473 /* Road_Rage.otf in Resources */ = {isa = PBXBuildFile; fileRef = 677CD85B1E5B93FE0055D473 /* Road_Rage.otf */; };
@@ -31,6 +44,19 @@
 /* Begin PBXFileReference section */
 		67182F601E562FE600E30A0F /* PotatoPlayerOutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoPlayerOutViewController.swift; sourceTree = "<group>"; };
 		6740263E1E5E1A8C00E3245C /* Blazars.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Blazars.mp3; sourceTree = "<group>"; };
+		674DC95B1E5F8CDA00487C55 /* yourule.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = yourule.mp3; sourceTree = "<group>"; };
+		674DC95C1E5F8CDA00487C55 /* righthand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = righthand.mp3; sourceTree = "<group>"; };
+		674DC95D1E5F8CDA00487C55 /* reverse.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = reverse.mp3; sourceTree = "<group>"; };
+		674DC95E1E5F8CDA00487C55 /* pass.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = pass.mp3; sourceTree = "<group>"; };
+		674DC95F1E5F8CDA00487C55 /* oneleg.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = oneleg.mp3; sourceTree = "<group>"; };
+		674DC9601E5F8CDA00487C55 /* lefthand.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lefthand.mp3; sourceTree = "<group>"; };
+		674DC9611E5F8CDA00487C55 /* lasso.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = lasso.mp3; sourceTree = "<group>"; };
+		674DC9621E5F8CDA00487C55 /* jump.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = jump.mp3; sourceTree = "<group>"; };
+		674DC9631E5F8CDA00487C55 /* hammer.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = hammer.mp3; sourceTree = "<group>"; };
+		674DC96D1E5F8CE800487C55 /* Back in time.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Back in time.mp3"; sourceTree = "<group>"; };
+		674DC96E1E5F8CE800487C55 /* Can you feel it.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Can you feel it.mp3"; sourceTree = "<group>"; };
+		674DC96F1E5F8CE800487C55 /* Supersonic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = Supersonic.mp3; sourceTree = "<group>"; };
+		674DC9701E5F8CE800487C55 /* NorthernLights.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = NorthernLights.mp3; sourceTree = "<group>"; };
 		6757FB161E4BA0C800311526 /* PotatoWinnerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerViewController.swift; sourceTree = "<group>"; };
 		677CD8561E5B8EB60055D473 /* PotatoWinnerNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PotatoWinnerNameViewController.swift; sourceTree = "<group>"; };
 		677CD85B1E5B93FE0055D473 /* Road_Rage.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Road_Rage.otf; sourceTree = "<group>"; };
@@ -84,6 +110,19 @@
 			children = (
 				677CD85B1E5B93FE0055D473 /* Road_Rage.otf */,
 				67A1A5B71E491BF400FAD140 /* Assets.xcassets */,
+				674DC96D1E5F8CE800487C55 /* Back in time.mp3 */,
+				674DC96E1E5F8CE800487C55 /* Can you feel it.mp3 */,
+				674DC96F1E5F8CE800487C55 /* Supersonic.mp3 */,
+				674DC9701E5F8CE800487C55 /* NorthernLights.mp3 */,
+				674DC95B1E5F8CDA00487C55 /* yourule.mp3 */,
+				674DC95C1E5F8CDA00487C55 /* righthand.mp3 */,
+				674DC95D1E5F8CDA00487C55 /* reverse.mp3 */,
+				674DC95E1E5F8CDA00487C55 /* pass.mp3 */,
+				674DC95F1E5F8CDA00487C55 /* oneleg.mp3 */,
+				674DC9601E5F8CDA00487C55 /* lefthand.mp3 */,
+				674DC9611E5F8CDA00487C55 /* lasso.mp3 */,
+				674DC9621E5F8CDA00487C55 /* jump.mp3 */,
+				674DC9631E5F8CDA00487C55 /* hammer.mp3 */,
 				B43547411E524F050063F3B5 /* 01.mp3 */,
 				B43547421E524F050063F3B5 /* 02.mp3 */,
 				6740263E1E5E1A8C00E3245C /* Blazars.mp3 */,
@@ -207,12 +246,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				677CD85C1E5B941E0055D473 /* Road_Rage.otf in Resources */,
+				674DC9641E5F8CDA00487C55 /* yourule.mp3 in Resources */,
 				B43547441E524F050063F3B5 /* 01.mp3 in Resources */,
+				674DC9711E5F8CE800487C55 /* Back in time.mp3 in Resources */,
+				674DC9731E5F8CE800487C55 /* Supersonic.mp3 in Resources */,
+				674DC96B1E5F8CDA00487C55 /* jump.mp3 in Resources */,
+				674DC9671E5F8CDA00487C55 /* pass.mp3 in Resources */,
+				674DC96C1E5F8CDA00487C55 /* hammer.mp3 in Resources */,
+				674DC9721E5F8CE800487C55 /* Can you feel it.mp3 in Resources */,
 				B43547451E524F050063F3B5 /* 02.mp3 in Resources */,
+				674DC9691E5F8CDA00487C55 /* lefthand.mp3 in Resources */,
+				674DC9681E5F8CDA00487C55 /* oneleg.mp3 in Resources */,
+				674DC9651E5F8CDA00487C55 /* righthand.mp3 in Resources */,
 				6740263F1E5E1A8C00E3245C /* Blazars.mp3 in Resources */,
+				674DC9661E5F8CDA00487C55 /* reverse.mp3 in Resources */,
+				674DC96A1E5F8CDA00487C55 /* lasso.mp3 in Resources */,
 				67A1A5B81E491BF400FAD140 /* Assets.xcassets in Resources */,
 				67A1A5B61E491BF400FAD140 /* Main.storyboard in Resources */,
 				B43547461E524F050063F3B5 /* 03.mp3 in Resources */,
+				674DC9741E5F8CE800487C55 /* NorthernLights.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

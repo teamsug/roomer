@@ -8,6 +8,7 @@
 
 import UIKit
 import QuartzCore
+import AVFoundation
 
 class PotatoGameViewController: UIViewController {
     
@@ -44,9 +45,21 @@ class PotatoGameViewController: UIViewController {
     // Array of movements, strings of images are mounted with the movements array content
     var movements: [String] = ["pass", "hammer", "jump", "lasso", "lefthand", "righthand", "oneleg", "reverse"]
     
+    var musics: [String] = ["Back in time", "Can you feel it", "Supersonic", "NorthernLigths"]
+    var indexMusic = 0
+    
+    var voicePlayer = AVAudioPlayer()
+    var voiceToPlay = Bundle.main.path(forResource: "pass", ofType: "mp3")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        delay(3) { 
+            self.playTheComand(command: "pass") {
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                delegate.soundPlayer.volume = 1.0
+            }
+        }
+    
         // Do any additional setup after loading the view.
 //        let delegate = UIApplication.shared.delegate as! AppDelegate
 //        delegate.soundPlayer.stop()
@@ -73,10 +86,18 @@ class PotatoGameViewController: UIViewController {
         //CreateView {
         delay(3) {
         
-            self.changeMusic(music: "Blazars")
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            delegate.soundPlayer.volume = 0.2
             
-            let timeIntervalToChange = arc4random_uniform(13 - 10) + 10
-            let timeIntervalToPause = arc4random_uniform(35 - 25) + 25
+            self.changeMusic(music: self.musics[self.indexMusic])
+            if self.indexMusic > 3{
+                self.indexMusic = 0
+            }else{
+                self.indexMusic += 1
+            }
+            
+            let timeIntervalToChange = arc4random_uniform(6 - 3) + 3
+            let timeIntervalToPause = arc4random_uniform(10 - 7) + 7
             
             self.timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
                 if self.counter >= self.movements.count {
@@ -135,7 +156,10 @@ class PotatoGameViewController: UIViewController {
                 self.gestureTitle.alpha = 1.0
                 self.gestureTitleNext.alpha = 0.0
             }
-            
+            self.playTheComand(command: movement) {
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                delegate.soundPlayer.volume = 1
+            }
             gridOnSecondChange = false
         } else {
             
@@ -154,7 +178,10 @@ class PotatoGameViewController: UIViewController {
                 self.gestureTitle.alpha = 0.0
                 self.gestureTitleNext.alpha = 1.0
             }
-            
+            self.playTheComand(command: movement) {
+                let delegate = UIApplication.shared.delegate as! AppDelegate
+                delegate.soundPlayer.volume = 1
+            }
             gridOnSecondChange = true
         }
     }
@@ -192,6 +219,29 @@ class PotatoGameViewController: UIViewController {
         let delay = DispatchTime.now() + .seconds(time)
         DispatchQueue.main.asyncAfter(deadline: delay, execute: finish)
     }
+    
+    func makeTheParty(){
+        let audioURL = NSURL(fileURLWithPath: self.voiceToPlay!)
+        do {
+            try voicePlayer = AVAudioPlayer(contentsOf: audioURL as URL, fileTypeHint: nil)
+            voicePlayer.prepareToPlay()
+        } catch let err as NSError {
+            print(err.debugDescription)
+        }
+    }
+    
+    func playTheComand(command: String, completion: () -> Void) {
+        let delegate = UIApplication.shared.delegate as! AppDelegate
+        delegate.soundPlayer.volume = 0.2
+        self.voiceToPlay = Bundle.main.path(forResource: command, ofType: "mp3")
+        self.makeTheParty()
+        self.voicePlayer.numberOfLoops = 0
+        self.voicePlayer.play()
+        self.voicePlayer.volume = 1
+        completion()
+        //
+    }
+    
 }
 
 class CustomView: UIView{

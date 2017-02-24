@@ -135,40 +135,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bvw-B7-7kw">
-                                <rect key="frame" x="0.0" y="0.0" width="90" height="1080"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="eOu-c3-Xfi">
+                                <rect key="frame" x="0.0" y="0.0" width="1920" height="1080"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xzE-Hk-xfz">
-                                <rect key="frame" x="1830" y="0.0" width="90" height="1080"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutorial" translatesAutoresizingMaskIntoConstraints="NO" id="9qy-91-GIK">
+                                <rect key="frame" x="707" y="74" width="507" height="83"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wwF-xE-Y4E">
-                                        <rect key="frame" x="-1830" y="1020" width="1920" height="60"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="86D-lR-krf">
-                                <rect key="frame" x="0.0" y="0.0" width="1920" height="60"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tutorialImage" translatesAutoresizingMaskIntoConstraints="NO" id="hQB-QT-Gxe">
+                                <rect key="frame" x="336" y="194" width="1248" height="718"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tutorial" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ovw-pY-tgh">
-                                <rect key="frame" x="710" y="128" width="500" height="300"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="80"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mcp-Lk-6iK">
-                                <rect key="frame" x="775" y="866" width="372" height="86"/>
+                                <rect key="frame" x="150" y="931" width="1620" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="RoadRage" family="Road Rage" pointSize="75"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Proceed to game"/>
+                                <state key="normal" title="Repeat the described movements"/>
                                 <connections>
                                     <action selector="proceedToGamePressed:" destination="fGx-4R-d6p" eventType="primaryActionTriggered" id="2BO-Zj-1CD"/>
                                     <segue destination="tBh-3y-ZcO" kind="show" identifier="character" id="mSM-kl-Fub"/>
@@ -473,11 +457,13 @@
         <image name="roomerLabel" width="600" height="119"/>
         <image name="selectplayersGrid" width="1920" height="166"/>
         <image name="selectplayersinvertidoGrid" width="1920" height="167"/>
+        <image name="tutorial" width="516" height="92"/>
+        <image name="tutorialImage" width="1248" height="718"/>
         <image name="youareout" width="1497" height="1100"/>
         <image name="youareoutGrid" width="1920" height="172"/>
         <image name="yourule" width="1170" height="1075"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="eSq-D8-H0N"/>
+        <segue reference="mSM-kl-Fub"/>
     </inferredMetricsTieBreakers>
 </document>
