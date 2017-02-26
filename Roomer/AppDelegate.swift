@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         makeTheParty()
         soundPlayer.numberOfLoops = -1
-        soundPlayer.volume = 1
+        soundPlayer.volume = 0.5
         soundPlayer.play()
         return true
     }

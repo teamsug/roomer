@@ -96,8 +96,8 @@ class PotatoGameViewController: UIViewController {
                 self.indexMusic += 1
             }
             
-            let timeIntervalToChange = arc4random_uniform(6 - 3) + 3
-            let timeIntervalToPause = arc4random_uniform(10 - 7) + 7
+            let timeIntervalToChange = arc4random_uniform(6 - 4) + 4
+            let timeIntervalToPause = arc4random_uniform(25 - 20) + 20
             
             self.timerToChangeMovement = Timer.scheduledTimer(withTimeInterval: TimeInterval(timeIntervalToChange), repeats: true) { (timer) in
                 if self.counter >= self.movements.count {
@@ -232,7 +232,7 @@ class PotatoGameViewController: UIViewController {
     
     func playTheComand(command: String, completion: () -> Void) {
         let delegate = UIApplication.shared.delegate as! AppDelegate
-        delegate.soundPlayer.volume = 0.2
+        delegate.soundPlayer.volume = 1
         self.voiceToPlay = Bundle.main.path(forResource: command, ofType: "mp3")
         self.makeTheParty()
         self.voicePlayer.numberOfLoops = 0

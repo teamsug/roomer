@@ -321,10 +321,10 @@
                                 <textInputTraits key="textInputTraits" keyboardAppearance="alert"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tvG-d5-2iO">
-                                <rect key="frame" x="863" y="795" width="195" height="86"/>
+                                <rect key="frame" x="870" y="795" width="181" height="86"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <inset key="contentEdgeInsets" minX="40" minY="20" maxX="40" maxY="20"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Finish"/>
                                 <connections>
                                     <action selector="donePressed:" destination="cXR-XN-ShD" eventType="primaryActionTriggered" id="4wG-DZ-3ni"/>
                                     <segue destination="hvR-2Z-aEq" kind="show" identifier="winner" id="Fkt-HS-xx0"/>
